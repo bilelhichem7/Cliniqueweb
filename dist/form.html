@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+<!--logo-->
+<div class="logo">
+<img src="/images/Rectangle 51.png" alt="" srcset="">
+<span>Clinic Name</span>
+</div>
+<!--the form-->
+<div class="form">
+    <input type="text" placeholder="Full Name" name="name" id="name"> 
+    <input type="text" placeholder="Address" name="address" id="address">
+    
+    <div class="flex1">
+     <div class="box1">
+        <h5>Date of birth</h5>
+        <input type="date" placeholder="_____ / _____/ _____" name="date" id="date">
+     </div>
+   
+     <div class="box2">
+        <h5>City</h5>
+        <select name="city" id="city" aria-placeholder="Choose">
+          <option value="city">Choose</option>
+        </select>
+     </div>
+
+     <div class="box3">
+        <h5>Civil status</h5>
+        <select name="status" id="status" aria-placeholder="Choose">
+            <option value="city">Choose</option>
+          </select>
+     </div>    
+
+     <div class="box4">
+        <h5>Sex </h5>
+          <select name="sex" id="sex" aria-placeholder="Choose">
+            <option value="sex">Choose</option>
+          </select>
+     </div>     
+    </div>
+    <div class="flex2">
+        <input type="email" name="email" id="email" placeholder="Email">
+        <input type="tel" name="phone" id="phone" placeholder="Phone number">
+    </div>
+    <input type="number" name="security-nmbr" id="security-nmbr" placeholder="Patient security number">
+    <input type="Pattern" name="Pattern-nmbr" id="Pattern" placeholder="Pattern">
+    <button>Send</button>
+</div>
+  <script src="form.js"></script>  
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="product.css">
+</head>
+<body>
+    <!--the head-->
+<div class="head">
+     <div class="navbar">
+    <img src="/images/Group 29.png" alt="">
+    <div class="log-out">
+        <img src="/images/Vector.svg" alt="">
+        <span>Log Out</span>
+    </div>
+    </div>
+    <div class="btns">
+        <select name="filtre" id="filtre">
+            <option value="All">All</option>
+        </select>
+        
+            
+            <input type="search" placeholder="search" id="searchinp" >
+        
+        
+        <button class="searchbtn">Search</button>
+        <div class="modif">
+            <button class="add"><img src="/images/add.png" alt=""> Add</button>
+            <button class="delete"><img src="/images/delete.png" alt=""> Delete</button>
+        </div>
+    </div>
+</div>
+<!--inputs-->
+<div class="input"></div>
+    <!--the outputs-->
+    <div class="outputs">
+        <div class="searchBlock">
+         
+        </div>
+       <div id="deleteAll">
+          
+       </div>
+
+
+        <table>
+            <tr class="tr1">
+                <th><input type="checkbox" id="check"></th>
+                <th>Code</th>
+                <th>Products</th>
+                <th>Quantity</th>
+                <th>Order number</th>
+                <th>Batch number</th>
+                <th>Expiration date</th>
+                
+            </tr>
+            <tr >
+                <th><input type="checkbox" id="check"></th>
+                <th>900546</th>
+                <th>Paracetamol <br>
+                   <p> 500 gm</p></th>
+                <th>02</th>
+                <th>239756</th>
+                <th>413</th>
+                <th>10/10/2023 <button onclick="show1()"><img src="/images/more-vertical.png" alt=""></button>
+                    <div class="cho" id="choix1">
+                        <button>Edit</button>
+                        <button>delete</button>
+                    </div></th>
+                
+            </tr>
+            <tr >
+                <th><input type="checkbox" id="check"></th>
+                <th>900546</th>
+                <th>Paracetamol <br>
+                   <p> 500 gm</p></th>
+                <th>02</th>
+                <th>239756</th>
+                <th>413</th>
+                <th>10/10/2023 <button onclick="show2()"><img src="/images/more-vertical.png" alt=""></button>
+                    <div class="cho" id="choix2">
+                        <button>Edit</button>
+                        <button>delete</button>
+                    </div></th>
+                
+            </tr>
+            <tr >
+                <th><input type="checkbox" id="check"></th>
+                <th>900546</th>
+                <th>Paracetamol <br>
+                   <p> 500 gm</p></th>
+                <th>02</th>
+                <th>239756</th>
+                <th>413</th>
+                <th>10/10/2023 <button onclick="show()"><img src="/images/more-vertical.png" alt=""></button>
+                    <div class="cho" id="choix3">
+                        <button>Edit</button>
+                        <button>delete</button>
+                    </div></th>
+                
+            </tr>
+
+            <tbody id="tbody"><!--we add here with-->
+               <!--
+               
+        -->
+            </tbody>
+        </table>
+       </div>
+
+    </div>
+
+  <script src="product.js"></script>  
+</body>
+</html>
