@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getAuth, createUserWithEmailAndPassword,onAuthStateChanged,signInWithEmailAndPassword } from "firebase/auth";  
+import { getAuth,onAuthStateChanged,signInWithEmailAndPassword } from "firebase/auth";  
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -26,6 +26,18 @@ const auth = getAuth(app);
 
 const login = document.querySelector("#login") ; 
 
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    const uid = user.uid;
+    window.location = "form.html";
+    // ...
+  } else {
+    // User is signed out
+    // ...
+  }
+});
+
+
 
 
 login.addEventListener("click",function(){
@@ -41,24 +53,6 @@ login.addEventListener("click",function(){
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-  });
-
-
-
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      const uid = user.uid;
-      window.location = "form.html";
-      // ...
-    } else {
-      // User is signed out
-      // ...
-    }
-  });
-  
-
-
-
-})
+  });})
 
 
