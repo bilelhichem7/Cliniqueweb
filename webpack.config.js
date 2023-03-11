@@ -7,7 +7,8 @@ module.exports = {
    index:'./src/index.js',
    Agent:'./src/Agent.js',
    form:'./src/form',
-   pharmacy:'./src/pharmacy'
+   pharmacy:'./src/pharmacy', 
+   product:'./src/product.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
