@@ -5,7 +5,9 @@ module.exports = {
   mode: 'development',
   entry: {
    index:'./src/index.js',
-   Agent:'./src/Agent.js'
+   Agent:'./src/Agent.js',
+   form:'./src/form',
+   pharmacy:'./src/pharmacy'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
