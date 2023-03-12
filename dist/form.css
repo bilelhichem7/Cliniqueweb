@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,500;0,700;1,400;1,600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    
+}
+body{
+    font-family:'Noto Sans',sans-serif;
+    font-style: normal;
+}
+.logo span{
+    position: absolute;
+    top: 4.3%;
+    bottom: 88.15%;
+    font-weight: 700;
+    font-size: 45px;
+    background: linear-gradient(180deg, #3E6D9C 39.06%, #001253 86.46%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;   
+}
+.logo img{    
+width: 65px;
+height: 65px;
+margin-top: 20px;
+margin-left: 52px;
+
+}
+.form{
+    position: absolute;
+    width: 982px;
+    height: 459.43px;
+    margin-left: 192px;
+    margin-top: 29px;
+}
+input{
+    
+    box-sizing: border-box;
+    width: 980px;
+    height: 47.46px;
+    padding: 10px;   
+    margin-bottom: 28px;
+    background: rgba(106, 112, 126, 0.0001);
+    border: 1px solid #000000;
+    border-radius: 13px;
+    font-weight: 600;
+    font-size: 15px;  
+}
+::placeholder{
+    color: rgba(0, 0, 0, 0.25);  
+}
+.box1,.box2,.box3,.box4{
+    display: flex; 
+    justify-content: space-between;
+    flex-direction: column;  
+    
+}
+ h5{  
+font-weight: 600;
+font-size: 16px;
+line-height: 22px;
+color: #000000;
+}
+.box2 h5, .box3 h5{
+    margin-left: 30px;
+}
+.box4 h5{
+    margin-left: 190px;
+}
+#date{
+    width: 233.68px;
+}
+select{
+    box-sizing: border-box;
+    width: 164.36px;
+    height: 48.59px;
+    margin-left: 26.64px;
+    background: rgba(106, 112, 126, 0.0001);
+    border: 1px solid #376293;
+    border-radius: 13px;
+    appearance: none;
+    background-image: url(/images/Group\ 5.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.25);
+}
+#sex{
+    margin-left: 180.64px;
+}
+.flex1{
+    display: flex;
+    align-items:start;
+    justify-content: space-between;
+}
+
+.flex2{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+}
+.flex2 input{
+    width: 480px;
+}
+button{
+width: 147px;
+height: 50px;
+margin-left: 415px;
+font-weight: 700;
+font-size: 25px;
+text-align: center;
+color: #FFFFFF;
+border-style: none;
+background: #376293;
+border-radius: 10px;
+}
+button:hover{
+    background: #45678f;
+    cursor: pointer;
+}
