@@ -43,6 +43,10 @@ onAuthStateChanged(auth, (user) => {
 login.addEventListener("click",function(){
     const email = document.querySelector("#email").value ; 
     const pass = document.querySelector("#password").value; 
+<<<<<<< HEAD
+=======
+    
+>>>>>>> origin/master
     signInWithEmailAndPassword(auth, email, pass)
   .then((userCredential) => {
     // Signed in 
