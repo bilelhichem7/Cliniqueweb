@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="product.css">
+</head>
+<body>
+   <!--the head-->
+<div class="head">
+    <div class="navbar">
+   <img src="/images/Group 29.png" alt="">
+   <div class="log-out">
+      <a href="./pharmacy.html" class="logOut"> <img src="/images/SignOut.svg" alt="">
+       <span>Log Out</span></a>
+   </div>
+   </div>
+   <div class="btns">
+       <select name="filtre" id="filtre">
+           <option value="All">All</option>
+           <option value="code" id="codeFilter">code</option>
+           <option value="product" id="nameFilter">product</option>
+       </select>
+       
+           
+           <input type="search" placeholder="search" id="searchinp" >
+       
+       
+       <button class="searchbtn" id="searchbtn"><span> Search</span></button>
+       <div class="modif">
+           <button class="add" id="btntext" ><img src="/images/add.png" alt=""> Add</button>
+           <button class="deletem" onclick="dtm()"><img src="/images/delete.png" alt=""> Delete</button>
+       </div>
+   </div>
+</div>
+<!--inputs-->
+<div class="input"></div>
+   <!--the outputs-->
+   <div class="outputs">
+       <div class="searchBlock">
+        
+       </div>
+      <div id="deleteAll">
+         
+      </div>
+
+<!---->
+       <table cellspacing="0" > 
+           <tr class="tr1" >
+               <th ><input type="checkbox" id="checkAll" class="checkALL" onclick="checkal()"></th>
+               <th>Code</th>
+               <th>Products</th>
+               <th>Quantity</th>
+               <th>Order number</th>
+               <th>Batch number</th>
+               <th>Expiration date</th>
+               <th></th>
+               
+           </tr>
+           <tr class="input" id="tr2" >
+               <td><input type="checkbox" id="check" class="checkIn"></td>
+               <td><input type="number" name="code" id="code" placeholder="code"></td>
+               <td>
+                <input type="text" id="productt" placeholder="product">
+                <input type="text" id="dose" placeholder="dose">
+             </td>
+               <td><input type="number" id="quantity" class="quantity" placeholder="quantity"></td>
+               <td><input type="number" name="order-number" id="ordernumber" placeholder="order-number"></td>
+               <td><input type="number" name="Batch-number" id="Batchnumber" placeholder="Batch number"></td>
+               <td><input type="date" name="Expiration-date" id="Expirationdate" placeholder="Expiration date"></td>
+               
+           </tr>
+           
+
+           <tbody id="tbody"><!--we add here with-->
+              <!--
+              
+       -->
+        
+       
+           </tbody>
+       </table>
+      </div>
+
+   </div>
+
+
+  <script src="product.bundle.js"></script>  
+</body>
+</html>

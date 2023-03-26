@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,500;0,700;1,400;1,600&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family:'Noto Sans',sans-serif;
+}
+body{
+    
+    background-image: url(/images/49127-removebg\ 1.svg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 674px ;
+    background-position: 650px 94px ;   
+   
+}
+.navbar{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  
+}
+.logo{
+    margin-top: -10px;
+}
+.logo img{
+    width: 45.08px;
+    height:45.08px ;
+    margin-left: 52px;
+    margin-top: 29px;
+}
+.logo span{
+    padding: 5px;  
+    font-weight:600;
+    font-size:2.4rem;      
+    background: linear-gradient(180deg, #3E6D9C 39.06%, #001253 86.46%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;      
+}
+.info{
+    
+    
+    display: flex;   
+    height: 41px;     
+    margin-right: 140px;
+    margin-top: 40px;
+}
+.info a{  
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    font-weight: 600;
+    line-height: 7px;
+    color: #000000;       
+}
+.info a:hover{   
+font-weight: 700;
+font-size: 30px;
+color: #376293;
+text-decoration: underline 2px ;
+}
+.home{
+    margin-left:134px ;
+    margin-top:40px ;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.home h1{      
+    font-weight: 600;
+    font-size: 49px;
+    line-height: 68px;
+    background: linear-gradient(180deg, #3E6D9C 29.69%, #001253 32.81%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.inputs{  
+width: 351px;
+height: 313px;
+display: flex;
+flex-direction: column;
+margin-top: 10px;
+}
+input{
+    width: 100%;
+    box-sizing: border-box;    
+    border: 4px solid #84AAC7;
+    border-radius: 10px;
+    height: 55px;
+    margin-top: 30px; 
+    font-weight: 300;
+    font-size: 18px;
+    padding: 10px; 
+}
+.inputs a{   
+    margin-left: 150px;
+    padding: 10px;
+    top: 549px;
+    font-weight: 600;
+    font-size: 19px;
+    color: #000000;
+}
+
+button{
+    width: 100%;
+    height: 50px;
+    border-style: none;
+    background: #376293;
+    border-radius: 10px;
+    color:#FFFFFF;
+    font-weight: 700;
+    font-size: 23px;
+    margin-top: 15px;
+}
+button:hover{
+    background: #45678f;
+    cursor: pointer;
+}
