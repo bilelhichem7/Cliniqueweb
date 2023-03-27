@@ -59,7 +59,7 @@ if(name == "" || adress == "" || dateofbirth == "" || city == "" || civilstatus 
       PatientPhoneNumber : phonenumber , 
       PatientSecurityNumber : patsecnumb 
     }
-    set(newRecordRef, newData) 
+    set(newRecordRef, newData) ;
 
  
        alert("PATIENT SEND") ; 

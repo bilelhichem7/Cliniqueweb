@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getStorage, ref as storageRef , getDownloadURL, uploadBytes } from "firebase/storage";
 import { getDatabase, push, ref as databaseURL, set , onValue } from "firebase/database";
-import { getAuth,createUserWithEmailAndPassword } from "firebase/auth";  
+import { getAuth,createUserWithEmailAndPassword ,signOut} from "firebase/auth";  
 
 
 
@@ -360,28 +360,6 @@ uploadBytes(imageRef, photo.files[0])
 })
 .catch((error) => {
  console.error("Error uploading image: ", error);
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
+});}
 });
 
