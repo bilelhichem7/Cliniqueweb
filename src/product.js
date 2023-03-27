@@ -104,7 +104,7 @@ onValue(starCountRef, (snapshot) => {
       <td>${data[i].MedBachNumber}</td>
       <td>${data[i].MedExpirationDate} </td>
       <td> 
-      <img src="/images/more-vertical.png" alt="" id="modf${i}" class="modf"  onclick="hide(${i})">
+      <img src="/images/more-vertical.png" alt="" id="modf${i}" class="modf"  >
      <div class="butns" id="butns${i}" style="display: none;" >
   <button onclick="deleteData(${i})" id="delete" >delete</button>
       <button id="update" onclick="updateData(${i})">update</button>
@@ -112,7 +112,6 @@ onValue(starCountRef, (snapshot) => {
   </td>    
   </tr>
   `
-  
   }
   document.getElementById('tbody').innerHTML = table ;
 });
@@ -279,3 +278,47 @@ document.getElementById('tbody').innerHTML = table ;
 
 });
 //...............................................................
+
+
+
+const cliniquename = document.querySelector("#cliniquename"); 
+const starCountRefe = databaseURL(database,"cliniquename");
+onValue(starCountRefe, (snapshot) => {
+  const data = snapshot.val();
+  if(data != ""){
+  cliniquename.innerHTML = data.nom ;}
+});
+
+
+
+
+//.......................
+
+onValue(db, (snapshot) => {
+  const data = snapshot.val(); 
+  for (let i in data) {
+    const medsup = document.getElementById(`modf${i}`);
+
+    const btn2 = document.getElementById(`butns${i}`); 
+    var cmp = 0 ; 
+    medsup.addEventListener("click",function(){
+         if(cmp == 0) {
+
+          btn2.style.display = "flex" ;  
+           cmp = 1 ; 
+        } else {
+
+          btn2.style.display = "none" ; 
+          cmp = 0 ; 
+        }
+    });
+      
+
+
+  }
+
+ 
+});
+
+
+

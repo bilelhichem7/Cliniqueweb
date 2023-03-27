@@ -79,3 +79,28 @@ if(name == "" || adress == "" || dateofbirth == "" || city == "" || civilstatus 
 });
 
 
+
+
+
+
+const cliniquename = document.querySelector("#cliniquename"); 
+const starCountRef = databaseURL(database,"cliniquename");
+onValue(starCountRef, (snapshot) => {
+  const data = snapshot.val();
+  if(data != ""){
+  cliniquename.innerHTML = data.nom ;}
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
