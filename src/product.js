@@ -95,7 +95,7 @@ onValue(starCountRef, (snapshot) => {
       table += `
       <tr id="index${i}" >
       <td><input type="checkbox" id="check${i}" style="width: 35px;height: 35px;"></td>
-      <td>${data[i].MedCode}</td>
+      <td  id="prodcode${i}" >${data[i].MedCode}</td>
       <td>${data[i].MedNameProduct} <br>
       </td>
          
@@ -106,8 +106,8 @@ onValue(starCountRef, (snapshot) => {
       <td> 
       <img src="/images/more-vertical.png" alt="" id="modf${i}" class="modf"  >
      <div class="butns" id="butns${i}" style="display: none;" >
-  <button onclick="deleteData(${i})" id="delete" >delete</button>
-      <button id="update" onclick="updateData(${i})">update</button>
+  <button  id="delete${i}" >delete</button>
+      <button id="update${i}">update</button>
    </div>      
   </td>    
   </tr>
@@ -218,8 +218,8 @@ for(let k in codes){
         <td> 
         <img src="/images/more-vertical.png" alt="" id="modf${i}" class="modf"  onclick="hide(${i})">
        <div class="butns" id="butns${i}" style="display: none;" >
-    <button onclick="deleteData(${i})" id="delete" >delete</button>
-        <button id="update" onclick="updateData(${i})">update</button>
+       <button  id="delete${i}" >delete</button>
+       <button id="update${i}">update</button>
      </div>      
     </td>    
     </tr>
@@ -258,8 +258,8 @@ document.getElementById('tbody').innerHTML = table ;
           <td> 
           <img src="/images/more-vertical.png" alt="" id="modf${i}" class="modf"  onclick="hide(${i})">
          <div class="butns" id="butns${i}" style="display: none;" >
-      <button onclick="deleteData(${i})" id="delete" >delete</button>
-          <button id="update" onclick="updateData(${i})">update</button>
+         <button  id="delete${i}" >delete</button>
+         <button id="update${i}">update</button>
        </div>      
       </td>    
       </tr>
@@ -298,14 +298,39 @@ onValue(db, (snapshot) => {
   const data = snapshot.val(); 
   for (let i in data) {
     const medsup = document.getElementById(`modf${i}`);
-
+    
     const btn2 = document.getElementById(`butns${i}`); 
+
     var cmp = 0 ; 
     medsup.addEventListener("click",function(){
-         if(cmp == 0) {
+      
+      if(cmp == 0) {
+      
+        btn2.style.display = "flex" ;  
+          const btndelete = document.getElementById(`delete${i}`);
+          const btnupdate = document.getElementById(`update${i}`);
 
-          btn2.style.display = "flex" ;  
-           cmp = 1 ; 
+ //       delete       ........................
+            btndelete.addEventListener("click",function(){
+              remove(databaseURL(database, `Medicament/${i}`))
+              .then(() => console.log(`Medication with ID ${i} deleted successfully`))
+              .catch((error) => console.error(`Error deleting medication with ID ${i}: ${error}`));
+
+            });
+// ...........................................
+
+
+btnupdate.addEventListener("click",function(){
+        
+}); 
+
+
+
+
+
+
+
+          cmp = 1 ; 
         } else {
 
           btn2.style.display = "none" ; 
