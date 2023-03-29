@@ -150,33 +150,44 @@ border-radius: 4px;
    
     
 }
-.doc1{
- width: 200px;
-height: 230px;
-background: #FDFDFD;
-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-border-radius: 10px;
-
-margin-left: 50px;
-}
-.infos{
+.doc1 {
+    width: 300px;
+    margin-left: 30px;
+    height: 300px;
     display: flex;
-align-items: center;
-text-align: center;
-padding: 6px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
-.infos h4{
-    font-weight: 700;
-font-size: 15px;
-line-height: 20px;
-color: #000000;
+.doc1 img {
+    width: 290px;
+    height: 180px;
+    object-fit: unset;
+    border-radius: 5%;
 }
-.infos p{
+.doc1 .infos {
+    text-align: center;
+    margin-top: 20px;
+}
+.doc1 h4 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000000;
+}
+.doc1 p {
+    margin: 0;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.16);
+    text-decoration-line: underline;
     font-weight: 600;
-font-size: 15px;
-text-decoration-line: underline;
-color: rgba(0, 0, 0, 0.16);
 }
+
+
+
 #doclist, #nurslist, #pharmlist, #receplist,#AddForm{
     display: none;
 }

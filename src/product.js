@@ -193,13 +193,13 @@ const searchinp = document.getElementById('searchinp');
 
 searchbtn.addEventListener("click", function() {
  
-  const searchTerm = searchinp.value;
+const searchTerm = searchinp.value;  
   if (searchTerm !== "" && filtre.value === "code") {
   const results = codedata.filter((item) => item.code.includes(searchTerm));
   const codes = results.map((item) => item.code );
   var table = '' ; 
 for(let k in codes){
-  console.log(codes[k]);
+  
   onValue(starCountRef, (snapshot) => {
     const data = snapshot.val();   
     for (let i  in data){
