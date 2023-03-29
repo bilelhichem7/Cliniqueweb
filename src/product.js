@@ -51,7 +51,7 @@ add.addEventListener("click",function(){
     document.getElementById('tr2').style.display='contents';
     b=1;
   } else { 
-    if (code.value == "" || productt.value == "" || quantity.value == "" || ordernumber == "" || Batchnumber== ""
+    if (code.value == "" || productt.value == "" || quantity.value == "" || ordernumber.value == "" || Batchnumber.value== ""
     || Expirationdate.value == ""
     ){
         alert("PLEASE DON'T LET ANYTHING EMPTY");
@@ -319,9 +319,55 @@ onValue(db, (snapshot) => {
             });
 // ...........................................
 
-
+var esi = 0 ; 
+var prid  = "" ; 
 btnupdate.addEventListener("click",function(){
-        
+  const starCount = databaseURL(database, `Medicament/${i}`);
+  console.log(starCount);
+if (esi == 0 ){
+  esi = 1 ; 
+  document.getElementById('tr2').style.display='contents';
+            btnupdate.textContent = "confirm update"
+
+            onValue(starCount, (snapshot) => {
+              const data = snapshot.val();
+              prid = data.medid ;   
+              code.value = data.MedCode ; 
+              productt.value = data.MedNameProduct ; 
+              quantity.value = data.MedQuantity ; 
+              ordernumber.value = data.MedOrderNumber ; 
+              Batchnumber.value = data.MedBachNumber ; 
+              Expirationdate.value = data.MedExpirationDate ; 
+             });
+
+} else if (esi == 1){
+
+  if (code.value == "" || productt.value == "" || quantity.value == "" || ordernumber.value == "" || Batchnumber.value== ""
+    || Expirationdate.value == ""
+    ){
+        alert("PLEASE DON'T LET ANYTHING EMPTY");
+    }  else {
+      
+      const newData = {
+        medid : prid ,
+        MedNameProduct : productt.value , 
+        MedCode : code.value , 
+        MedQuantity : quantity.value , 
+        MedOrderNumber : ordernumber.value , 
+        MedBachNumber : Batchnumber.value , 
+        MedExpirationDate : Expirationdate.value
+      } ; 
+      set(starCount, newData) ;
+            document.getElementById('tr2').style.display='none';
+            btnupdate.textContent = "update" ;  
+            esi = 0 ; 
+     
+
+    }
+}
+            
+            
+
 }); 
 
 
