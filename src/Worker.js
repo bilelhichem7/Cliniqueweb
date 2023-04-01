@@ -40,7 +40,9 @@ onValue(starCountRef, (snapshot) => {
   cliniquename.innerHTML = data.nom ;}
 });
 
-
+cliniquename.addEventListener("click",function(){
+  window.location.href = "index.html" ; 
+})
 
 
 const signout = document.querySelector("#signout"); 
