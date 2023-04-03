@@ -142,6 +142,10 @@ for (let k in codes){
   });
 }
 document.getElementById('doclist').innerHTML = table ;
+  }else {
+    setInterval(function() {
+      location.reload();
+    }, 100);
   }
  });
 
@@ -214,6 +218,10 @@ function shownur(){
         });
       }
       document.getElementById('nurslist').innerHTML = table ;
+        } else {
+          setInterval(function() {
+            location.reload();
+          }, 100);
         }
        });
     
@@ -281,6 +289,10 @@ for (let k in codes){
   });
 }
 document.getElementById('pharmlist').innerHTML = table ;
+  } else {
+    setInterval(function() {
+      location.reload();
+    }, 100);
   }
  });
 
@@ -352,6 +364,10 @@ document.getElementById('pharmlist').innerHTML = table ;
     });
   }
   document.getElementById('receplist').innerHTML = table ;
+    } else {
+      setInterval(function() {
+        location.reload();
+      }, 100);
     }
    });
    

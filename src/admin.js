@@ -26,6 +26,8 @@ const login = document.querySelector("#login") ;
 onAuthStateChanged(auth, (user) => {
   if (user) {
     const uid = user.uid;
+
+      
     window.location = "Worker.html";
     // ...
   } else {

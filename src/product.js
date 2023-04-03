@@ -272,6 +272,10 @@ document.getElementById('tbody').innerHTML = table ;
     });
   };
   document.getElementById('tbody').innerHTML = table ;
+  } else {
+    setInterval(function() {
+      location.reload();
+    }, 100);
   } ;
 
 
