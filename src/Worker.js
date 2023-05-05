@@ -481,7 +481,7 @@ uploadBytes(imageRef, photo.files[0])
      // Insérer l'URL de téléchargement de l'image dans la balise <img>
      const img = document.createElement("img");
      img.src = url;
-     document.body.appendChild(img);
+
     
      
      createUserWithEmailAndPassword(auth, email, password)
