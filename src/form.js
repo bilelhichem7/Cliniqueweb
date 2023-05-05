@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase, push, ref as databaseURL, set , onValue } from "firebase/database";
-
+import { getAuth,signOut } from "firebase/auth";  
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -20,7 +20,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
+const auth = getAuth(app);
 const database = getDatabase(app);
 const send = document.querySelector("#send") ; 
 
@@ -93,7 +93,27 @@ onValue(starCountRef, (snapshot) => {
 
 cliniquename.addEventListener("click",function(){
   window.location.href = "index.html" ; 
-})
+});
+
+
+
+
+
+const  log = document.querySelector("#log") ; 
+
+log.addEventListener("click",function(){
+  console.log("hjh");
+  signOut(auth).then(() => {
+    window.location.href = "index.html";
+    }).catch((error) => {
+    // An error happened.
+  });
+   
+
+});
+
+
+
 
 
 

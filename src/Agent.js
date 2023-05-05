@@ -1,6 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth,onAuthStateChanged,signInWithEmailAndPassword } from "firebase/auth";  
+import { getAuth,onAuthStateChanged,signInWithEmailAndPassword ,sendPasswordResetEmail} from "firebase/auth";  
 import { getDatabase, onValue ,ref} from "firebase/database";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -20,7 +19,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const database = getDatabase(app);
 
@@ -82,6 +80,39 @@ login.addEventListener("click",function(){
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-  });})
+  });});
 
+
+
+
+
+
+
+const forget = document.querySelector("#forget") ; 
+
+forget.addEventListener('click',function(){
+  const email = document.querySelector("#email");
+
+  if(   email.value == "") {
+    alert("Don't less email empty") 
+  } else {
+
+    sendPasswordResetEmail(auth, email.value)
+    .then(() => {
+      alert("Password reset");
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+    });
+
+
+  }
+
+
+ 
+
+
+});
 
