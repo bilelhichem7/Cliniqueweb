@@ -63,24 +63,49 @@ onAuthStateChanged(auth, (user) => {
 login.addEventListener("click",function(){
     const email = document.querySelector("#email").value ; 
     const pass = document.querySelector("#password").value; 
-    
-    signInWithEmailAndPassword(auth, email, pass)
-  .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    const starCountRef = ref(database,"user/" + user.uid +"/UserJob" ); 
-    onValue(starCountRef, (snapshot) => {
-      const data = snapshot.val();
-      if (data == "Receptioniste"){
-        window.location = "form.html";
-      }
-    });
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-  });});
+    if(email == "" || pass == ""){
+      alert("Errore");
+    }else {
+      var dialog = document.createElement("div");
+      dialog.innerHTML = '<div class="lds-ring"><div></div><div></div><div></div><div></div></div><div>Veuillez patienter...</div>';
+      dialog.style.background = "rgba(0,0,0,0.5)";
+      dialog.style.color = "#fff";
+      dialog.style.position = "fixed";
+      dialog.style.top = "0";
+      dialog.style.left = "0";
+      dialog.style.width = "100%";
+      dialog.style.height = "100%";
+      dialog.style.display = "flex";
+      dialog.style.justifyContent = "center";
+      dialog.style.alignItems = "center";
+      document.body.appendChild(dialog);
+      signInWithEmailAndPassword(auth, email, pass)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        const starCountRef = ref(database,"user/" + user.uid +"/UserJob" ); 
+        onValue(starCountRef, (snapshot) => {
+          const data = snapshot.val();
+          if (data == "Receptioniste"){
+            document.body.removeChild(dialog);
+            window.location = "form.html";
+          }else {
+            document.body.removeChild(dialog);
+            alert("Errore");
+          }
+        });
+        // ...
+      })
+      .catch((error) => {
+        document.body.removeChild(dialog);
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
+    }
+  
+
+
+});
 
 
 
