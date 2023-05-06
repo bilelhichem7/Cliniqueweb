@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { getDatabase, push, ref, set , onValue } from "firebase/database";
+import { getAuth} from "firebase/auth";  
+import { getDatabase, ref, set , onValue } from "firebase/database";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -20,6 +21,10 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
+const auth = getAuth(app);
+
+
+
 
 const cliniquename = document.querySelector("#cliniquename"); 
 const starCountRef = ref(database, 'cliniquename');
@@ -33,14 +38,16 @@ onValue(starCountRef, (snapshot) => {
 
 cliniquename.addEventListener("click",function(){
   let nom = prompt("chose name :");
-  if (nom != ""){
+  if (nom != null){
 
     set(ref(database, 'cliniquename/' ), {
       nom : nom ,
      } 
      );
      cliniquename.innerHTML = nom ; 
-  } 
+  }  else {
+
+  }
   
   
 

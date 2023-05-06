@@ -462,6 +462,20 @@ const spec = document.querySelector("#spec").value;
 if (name === "" || adr === "" || date === "" || city === "" || sex === "" || phone === "" || email === "" || password === "" || job === "" || status === "" || spec === "") {
 alert("Please do not leave any field empty");
 } else {
+  var dialog = document.createElement("div");
+    dialog.innerHTML = '<div class="lds-ring"><div></div><div></div><div></div><div></div></div><div>Veuillez patienter...</div>';
+    dialog.style.background = "rgba(0,0,0,0.5)";
+    dialog.style.color = "#fff";
+    dialog.style.position = "fixed";
+    dialog.style.top = "0";
+    dialog.style.left = "0";
+    dialog.style.width = "100%";
+    dialog.style.height = "100%";
+    dialog.style.display = "flex";
+    dialog.style.justifyContent = "center";
+    dialog.style.alignItems = "center";
+    document.body.appendChild(dialog);
+
 
 const sexe = parseInt(sex);
 
@@ -505,12 +519,15 @@ uploadBytes(imageRef, photo.files[0])
           UserStatus : status 
         }
         );
+
+        document.body.removeChild(dialog);
         alert("User Added")
       
          
        // ...
      })
      .catch((error) => {
+      document.body.removeChild(dialog);
        const errorCode = error.code;
        const errorMessage = error.message;
        // ..
@@ -518,12 +535,16 @@ uploadBytes(imageRef, photo.files[0])
   
    })
    .catch((error) => {
+    document.body.removeChild(dialog);
      console.error("Error getting download URL: ", error);
    });
 })
 .catch((error) => {
+  document.body.removeChild(dialog);
  console.error("Error uploading image: ", error);
 });}
 });
+
+
 
 
