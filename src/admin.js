@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth,onAuthStateChanged,signInWithEmailAndPassword } from "firebase/auth";  
+import { getAuth,onAuthStateChanged,signInWithEmailAndPassword ,sendPasswordResetEmail} from "firebase/auth";  
 import { getDatabase, onValue ,ref} from "firebase/database";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -33,9 +33,7 @@ onAuthStateChanged(auth, (user) => {
       const data = snapshot.val();
       if (data == "admin"){
         window.location = "Worker.html" ; 
-      }else {
-        alert("Errore");
-      }
+      }else {  }
     });
        // ...
   } else {
@@ -93,15 +91,27 @@ login.addEventListener("click",function(){
     document.body.removeChild(dialog);
     const errorCode = error.code;
     const errorMessage = error.message;
-  });
+  });}
+}); 
 
 
-   }
-     
+const forget = document.querySelector("forget");
 
+forget.addEventListener("click",function(){
+  const email = document.querySelector("#email") ; 
+  if(   email.value == "") {
+    alert("Don't less email empty") 
+  } else {
+  
+  
+  sendPasswordResetEmail(auth , email.value)
+    .then(() => {
+      alert('Password reset email sent!');
+    })
+    .catch((error) => {
+      alert(error.message);
+    }); }
 
-
-
-})
+});
 
 

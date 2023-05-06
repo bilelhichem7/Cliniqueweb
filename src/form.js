@@ -24,6 +24,54 @@ const auth = getAuth(app);
 const database = getDatabase(app);
 const send = document.querySelector("#send") ; 
 
+const rommnumber = document.querySelector("#room") ; 
+
+
+ 
+
+const starCountReff = databaseURL(database,"NumberofRoom");
+onValue(starCountReff, (snapshot) => {
+  const data = snapshot.val(); 
+  let cmp = 0 ; 
+  for(let i in data){
+    cmp+=1 ; 
+      if(data[i].status == true){
+        const option = document.createElement('option');
+        option.value = `${cmp}`;
+        option.text = `${cmp}`;
+        rommnumber.add(option);
+      
+      }
+  };
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//...............................................................
 send.addEventListener("click" , function(){
   const db = databaseURL(database,"FormPatient/");
 
@@ -43,6 +91,10 @@ const sex = parseInt(sexe) ;
 if(name == "" || adress == "" || dateofbirth == "" || city == "" || civilstatus == ""  || sexe == "" || rommnumber == "" || chronicdiseas == "" || phonenumber == "" || patsecnumb == ""){
     alert("SVP DON'T LET ANYTHING EMPTY")
 }else {
+
+
+
+
   const sex = parseInt(sexe) ; 
     const newRecordRef = push(db);
      const newRecordKey = newRecordRef.key;
@@ -62,7 +114,15 @@ if(name == "" || adress == "" || dateofbirth == "" || city == "" || civilstatus 
     set(newRecordRef, newData) ;
 
  
+   
+ const dbb = databaseURL(database,"NumberofRoom/" + rommnumber);
+set((dbb),{
+  status : false 
+});
        alert("PATIENT SEND") ; 
+       setInterval(function() {
+        location.reload();
+      }, 100);
 
 
 }
