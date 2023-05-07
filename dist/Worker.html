@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worker</title>
+    <link rel="stylesheet" href="Worker.css">
+</head>
+<body>
+<!--the page content-->
+<div class="container">
+    <!--the derower-->
+    <div class="drower">
+       <!--the logo----->
+       <div class="logo">
+          <a href="#"> <img src="/images/Rectangle 51.png"><span  id="cliniquename">Clinic Name</span></a>
+      
+        </div>
+        <div class="pages">
+            <button id="Doctors">
+                <img src="/images/user.png" > 
+                Our Doctors
+            </button>
+            <button id="nurses" >
+                <img src="/images/user.png" > 
+                Our nurses
+            </button>
+            <button id="pharmacies" >
+                <img src="/images/user.png" > 
+                Our pharmacies
+            </button>
+            <button id="Receptionist" >
+                <img src="/images/user.png" > 
+                Our Receptionist
+            </button>
+            <button id="workers"  >
+                <img src="/images/Group 1000004355.png" > 
+                Add a workers
+            </button>
+        </div>
+        <div class="logOut">
+            <a ><img src="/images/SignOut1.png" > <span id="signout"  >Log out</span></a>
+        </div>
+    </div>
+    <!--the doctors list-->
+    <div class="doctors">
+     
+     <div class="Doctor" id="Doctor">
+        <!--for the search area-->
+         <div class="searchBar" id="searchBar">
+            <input type="search" id="search" placeholder="search">
+            <button id="searchBtn">Search</button>
+         </div>
+     </div>
+     <!--doctors-->
+     <div class="list" id="doclist">
+       
+
+
+     </div>
+
+
+
+
+
+     <!--nurses-->
+     <div class="list" id="nurslist">
+        <!--doctor1 div-->
+     
+       
+     </div>
+
+
+
+     <!--pharmacies-->
+     <div class="list" id="pharmlist">
+        <!--doctor1 div-->
+     
+       
+     </div>
+
+
+     <!--receptionist-->
+     <div class="list" id="receplist">
+        <!--doctor1 div-->
+      
+       
+     </div>
+
+
+     <!--add worker-->
+     <div class="add" id="AddForm">
+         <div class="addPhoto">
+            
+            <h5>Profil picture</h5>
+            <div class="inside">
+                <img src="/Cliniqueweb-bilel/images/Group 2.png" alt="" srcset="">
+               <input type="file" name="photo" id="photo" >
+           
+        </div>
+         </div>
+         <div class="inf">
+         <input type="text" placeholder="Full Name" id="name">
+         <input type="text" placeholder="Address" id="adr">
+         
+         <!--first flex-->
+        <div class="flex1">
+         <div class="date">
+            <h5>Date of birth</h5>
+            <input type="date" name="" id="date">
+         </div>
+         <div class="city">
+            <h5>City</h5>
+            <select name="city" id="city">
+                <option value="choose" id="choose">choose</option>
+                <option value="city">Choose</option>
+                <option value="Adrar">Adrar</option>
+                <option value="Chlef">Chlef</option>
+                <option value="Laghouat">Laghouat</option>
+                <option value="Oum El Bouaghi">Oum El Bouaghi</option>
+                <option value="Batna">Batna</option>
+                <option value="Béjaïa">Béjaïa</option>
+                <option value="Biskra">Biskra</option>
+                <option value="Béchar">Béchar</option>
+                <option value="Blida">Blida</option>
+                <option value="Bouira">Bouira</option>
+                <option value="Tamanrasset">Tamanrasset</option>
+                <option value="Tébessa">Tébessa</option>
+                <option value="Tlemcen">Tlemcen</option>
+                <option value="Tiaret">Tiaret</option>
+                <option value="Tizi Ouzou">Tizi Ouzou</option>
+                <option value="Alger">Alger</option>
+                <option value="Djelfa">Djelfa</option>
+                <option value="Jijel">Jijel</option>
+            </select>
+         </div>
+         <div class="Sex">
+            <h5>Sex</h5>
+            <select name="city" id="sex">
+                <option value="choose" id="choose">choose</option>
+                <option value="0">Male</option>
+                <option value="1">Female</option>
+            </select>
+         </div>
+         <div class="phone">
+            <h5>Phone number</h5>
+            <input type="tel" name="" id="phone" placeholder="07-00-00-00-00">
+         </div>
+        </div> 
+        <!--second flex-->
+      <div class="flex2">
+        <input type="email" name="email" id="email" placeholder="email">
+        <input type="password" name="password" id="password" placeholder="Password">
+      </div>
+        <!--third flex-->
+        <div class="flex3">
+            <div class="job">
+                <h5>Job</h5>
+                <select name="job" id="job">
+                    <option value="choose">Choose</option>
+                    <option value="doctor">DOCTOR</option>
+                    <option value="nurses">Nurses</option>
+                    <option value="pharmacies">Pharmacies</option>
+                    <option value="Receptioniste">Receptioniste</option>
+
+
+                </select>
+            </div>
+            <div class="status">
+                <h5>Civil status</h5>
+                <select name="status" id="status">
+                    <option value="choose">Choose</option>
+                    <option value="Maried">Maried</option>
+                    <option value="Divorced">Divorced</option>
+
+                </select>
+            </div>
+            <div class="Speciality">
+                <input type="text" name="spec" id="spec" placeholder="Choose">
+            </div>
+        </div>
+    </div>
+        <button id="save"> Save</button>
+     </div>
+    </div>
+</div>
+
+ <script src="Worker.bundle.js"></script> 
+</body>
+</html>

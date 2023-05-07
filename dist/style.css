@@ -118,7 +118,8 @@ header{
 }
 .btns img{
 width: 25px;
-height25px;
+height: 25px;
+margin-left: 5px;
 }
 .cads img{
     width: 20px;
@@ -145,9 +146,7 @@ height25px;
     border-style: none;
     background: #376293;
     border-radius:10px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+   
 
    
 }
@@ -159,6 +158,9 @@ height25px;
     text-align: center;   
     color: #FFFFFF;
     margin-right: 12px;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .cads{
     display: flex;
@@ -254,3 +256,11 @@ hr{
 
     
 }
+
+
+
+
+
+
+
+

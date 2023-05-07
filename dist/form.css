@@ -14,7 +14,7 @@ body{
     top: 4.3%;
     bottom: 88.15%;
     font-weight: 700;
-    font-size: 45px;
+    font-size: 2.6rem;
     background: linear-gradient(180deg, #3E6D9C 39.06%, #001253 86.46%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -38,19 +38,19 @@ input{
     
     box-sizing: border-box;
     width: 980px;
-    height: 47.46px;
+    height: 47.5px;
     padding: 10px;   
     margin-bottom: 28px;
     background: rgba(106, 112, 126, 0.0001);
     border: 1px solid #000000;
     border-radius: 13px;
     font-weight: 600;
-    font-size: 15px;  
+    font-size: 0.9rem;  
 }
 ::placeholder{
     color: rgba(0, 0, 0, 0.25);  
 }
-.box1,.box2,.box3,.box4{
+.box1,.box2,.box3,.box4,.box5{
     display: flex; 
     justify-content: space-between;
     flex-direction: column;  
@@ -58,15 +58,15 @@ input{
 }
  h5{  
 font-weight: 600;
-font-size: 16px;
+font-size: 1.1rem;
 line-height: 22px;
 color: #000000;
 }
-.box2 h5, .box3 h5{
+.box2 h5, .box3 h5, .box4 h5,.box5 h5{
     margin-left: 30px;
 }
-.box4 h5{
-    margin-left: 190px;
+.box5 h5{
+    margin-left: 30px;
 }
 #date{
     width: 233.68px;
@@ -85,12 +85,10 @@ select{
     background-position: right;
     padding: 10px;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 0.9rem;
     color: rgba(0, 0, 0, 0.25);
 }
-#sex{
-    margin-left: 180.64px;
-}
+
 .flex1{
     display: flex;
     align-items:start;
@@ -110,7 +108,7 @@ width: 147px;
 height: 50px;
 margin-left: 415px;
 font-weight: 700;
-font-size: 25px;
+font-size: 1.5rem;
 text-align: center;
 color: #FFFFFF;
 border-style: none;
@@ -121,3 +119,29 @@ button:hover{
     background: #45678f;
     cursor: pointer;
 }
+.desease{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+}
+#deseas{
+width: 437px;
+margin-left: 0px;
+margin-top: 2px;
+margin-bottom: 25px;
+}
+#phone{
+    margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+

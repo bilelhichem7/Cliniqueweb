@@ -8,6 +8,10 @@ module.exports = {
    Agent:'./src/Agent.js',
    form:'./src/form',
    pharmacy:'./src/pharmacy', 
+   product:'./src/product.js',
+   form:'./src/form.js',
+   admin:'./src/admin.js',
+   Worker:'./src/Worker.js',
    product:'./src/product.js'
   },
   output: {
