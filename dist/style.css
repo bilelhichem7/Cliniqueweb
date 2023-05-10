@@ -256,6 +256,19 @@ hr{
 
     
 }
+#beds{
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 27px;
+    text-align: center;  
+    color: #FFFFFF;   
+}
+#room{
+    font-weight: 700;
+    font-size:2rem;
+    text-align: center;
+    color: #FFFFFF;  
+}
 
 
 

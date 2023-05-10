@@ -88,10 +88,11 @@ const starCountRef = databaseURL(database,"Medicament/");
 onValue(starCountRef, (snapshot) => {
   const data = snapshot.val();   
   var table = '' ; 
+ 
   for (let i  in data){
     codedata.push( {code:data[i].MedCode}); 
     productdata.push( {product:data[i].MedNameProduct}); 
-
+    
       table += `
       <tr id="index${i}" >
       <td><input type="checkbox" id="check${i}" style="width: 35px;height: 35px;"></td>
