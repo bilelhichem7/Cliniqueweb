@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,500;0,700;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
 *{
     padding: 0;
     margin: 0;
     list-style: none;
     text-decoration: none;
-    font-family:'Noto Sans',sans-serif;
+    font-family:'Rubik',sans-serif;
 }
 .head{
 width: 100%;
+
 }
 .navbar{
     width:100%;
@@ -15,32 +16,46 @@ width: 100%;
     background: rgba(62, 109, 156, 0.7);
     display: flex;
     justify-content: space-between;
+    padding: 0px 0px 5px 0;
+}
+#cliniquename{
+    font-weight: 500;
+font-size: 2.5rem;
+line-height: 47px;
+margin-right: 900px;
+margin-left: -50px;
+
+background: linear-gradient(0deg, #FFFFFF, #FFFFFF);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+
 }
 .head img{
-    width: 65px;
-    height: 65px;
-    padding-left: 31px;
-    padding-top: 7px;
+    width: 37.48px;
+height: 41.09px;
+   margin: 25px 41px;
 }
 
 .logOut{
-    margin-top: 10px;
-    margin-right: 44px;
+    margin:0px 44px 0px 28px;
+   
     text-decoration: none;
     display: flex;
     align-items: center;
-    justify-content: center;
+    
+    flex-direction: row;
 }
 .log-out img{
-    width: 50px; 
-    height: 50px;   
-    margin-bottom: 5px;
+    width: 30px; 
+    height: 30px;   
+    
 }
 .log-out span{
-    font-weight: 500;
-    font-size: 1.7rem;
+    font-weight: 400;
+    font-size: 1.1rem;
     color: #FFFFFF;
-    margin-left: 10px;
+   margin-left: -40px;
    
     
     
@@ -48,9 +63,9 @@ width: 100%;
 .btns{
     display: flex;
     align-items: center; 
-    margin-left: 63px; 
-    margin-right: 33px;  
-    margin-top: 23px;
+    padding: 30px 60px 10px;
+    
+    
 }
 .head select{
     box-sizing: border-box;
@@ -59,22 +74,26 @@ width: 100%;
     align-items: center;
     padding: 8px 73px 8px 16px;
     gap: 4px;
-    width: 166px;
-    height: 44px;
-    border: 1px solid #DCDFE3;
-    border-radius: 4px 0px 0px 4px;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+    width: 139px;
+    height: 40px;
+    font-weight: 400;
+    font-size: 1rem;
+    background: rgba(162, 172, 189, 0.3);
+    border: 1px solid #7899BA;
+    border-radius: 15px;
 }
 #searchinp{
 padding: 8px 138px 8px 48px;
 gap: 8px;
-width: 352px;
-height: 44px;
+width: 485px;
+height: 43px;
+margin-left: 6px;
+
 background: #FFFFFF;
-border: 1px solid #DCDFE3;
-border-radius: 0px 4px 4px 0px;
+/* gray/light gray */
+
+border: 1px solid #DDDDDD;
+border-radius: 15px;
 background-image: url(/images/search.png);
 background-repeat: no-repeat;
 background-size: 24px;
@@ -90,25 +109,42 @@ background-position: 19px ;
 border-style: none;
 align-items: center;
 padding: 12px 24px;
-width: 175px;
-height: 44px;
-background: #F4F4F4;
-border-radius: 4px;
+width: 139px;
+height: 40px;
+font-size: 1rem;
+font-weight: 400;
+background: rgba(162, 172, 189, 0.3);
+border: 1px solid #7899BA;
+border-radius: 15px;
 margin-left: 16px;
-margin-right: 287px;
+margin-right: 118px;
 }
 .modif{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    
+    padding: 0px 60px  ;
 }
 .modif button img{
     width: 30px;
     height: 30px;
-    margin-bottom: 7px;
+    margin-bottom: 20px;
+    
+   
+    
+}
+.xl{
+    width: 130px;
+    height: 30px;   
+    background: rgba(162, 172, 189, 0.3);
+    border: 1px solid #7899BA;
+    border-radius: 15px;
+    margin-right: 500px;
+    padding: 5px  5px 0px 5px;
 }
 .modif button{
-margin-right: 35px;
+/* margin-right: 35px;
 width: 120px;
 height: 44px;
 border-style: none;
@@ -121,8 +157,20 @@ padding-right: 46.5px;
 display: flex;
 align-items: center;
 justify-content: center;
-
-
+*/
+margin-right: 20px;
+width: 120px;
+    height: 40px;   
+    background: rgba(162, 172, 189, 0.3);
+    border: 1px solid #7899BA;
+    border-radius: 15px;
+    font-size: 1rem;
+    padding: 8px 95px 10px 50px ;
+    display: flex;
+    font-weight: 400;
+    align-items: center;
+justify-content: center;
+flex-direction: row;
 }
 table{
     width: 100%;
@@ -179,6 +227,7 @@ flex-direction: column;
     background: #FFFFFF;
     font-weight: 400;
     font-size: 1rem;
+    
 }
 #delete{
    color: red;

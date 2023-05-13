@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,500;0,700;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
 *{
     padding: 0;
     margin: 0;
     list-style: none;
     text-decoration: none;
-    font-family:'Noto Sans',sans-serif;
+    font-family:'Rubic',sans-serif;
 }
 body{
     
-    background-image: url(/images/49127-removebg\ 1.svg);
+    background-image: url(/images/pose_1.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 674px ;
-    background-position: 650px 94px ;   
+    background-position: 650px 0px ;   
    
 }
 .navbar{

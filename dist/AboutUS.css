@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family:'Rubic',sans-serif;
+}
+.page{
+    padding: 30px 52px ;
+    display: flex;
+    flex-direction: column;
+}
+.text h1{
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 177.9%;
+    text-align: center;
+    letter-spacing: 0.01em;   
+    color: #000000;
+}
+.text span{
+    color: #376293;
+}
+.text p{
+    line-height: 177.9%;
+text-align: center;
+font-size: 0,7rem;
+letter-spacing: 0.01em;
+color: #505050;
+}
+.cards{
+    margin-top: 23px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.card1 , .card2, .card3{
+    width: 342px;
+height: 320px;
+padding: 20px;
+
+background: rgba(162, 172, 189, 0.14);
+border-radius: 20px;
+}
+.card1:hover , .card2:hover , .card3:hover{
+    background: #FFFEFE;
+    box-shadow: 0px 4px 250px rgba(0, 0, 0, 0.15);
+}
+.cards img{
+    width: 119px;
+height: 119.7px;
+margin: 36px 111.5px;
+}
+.cards h3{
+    
+line-height: 177.9%;
+text-align: center;
+letter-spacing: 0.01em;
+color: #000000;
+}
+.cards p{
+    font-weight: 400;
+font-size: 16px;
+line-height: 177.9%;
+/* or 28px */
+
+text-align: center;
+letter-spacing: 0.01em;
+
+color: #545454;
+}
+.app{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+.app .dwmld{
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 177.9%;
+    text-align: center;
+    letter-spacing: 0.01em;   
+    color: #000000;
+    
+}
+.app a{
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 177.9%;
+    text-align: center;
+    letter-spacing: 0.01em;  
+    color: #376293;
+}
+a:hover{
+    cursor: pointer;
+} 
+.social{
+    font-weight: 500;
+font-size: 1.3rem;
+line-height: 177.9%;
+/* identical to box height, or 34px */
+
+text-align: center;
+letter-spacing: 0.01em;
+
+color: #000000;
+}
+.logos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.logos a{
+    margin-right: 15px;
+}
