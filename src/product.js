@@ -38,7 +38,7 @@ let quantity= document.getElementById('quantity');
 let ordernumber = document.getElementById('ordernumber');
 let Batchnumber = document.getElementById('Batchnumber');
 let Expirationdate = document.getElementById('Expirationdate');
-
+const selectous = document.getElementById("checkAll");
 
 let add=document.getElementById('btntext');
 //check all products//hide and show modification buttons
@@ -133,10 +133,18 @@ delet.addEventListener("click", function() {
   
     medIdsToDelete.forEach((medId) => {
       remove(databaseURL(database, `Medicament/${medId}`))
-        .then(() => console.log(`Medication with ID ${medId} deleted successfully`))
+        .then(() => console.log(`Medication with ID ${medId} deleted successfully`
+           
+        )
+        )
         .catch((error) => console.error(`Error deleting medication with ID ${medId}: ${error}`));
     });
   });
+  selectous.checked = false ; 
+  setInterval(function() {
+    location.reload();
+  }, 200);
+
 });
 
 
@@ -158,7 +166,7 @@ logout.addEventListener("click",function(){
 //....slection tous .......................
 
 
-const selectous = document.getElementById("checkAll");
+
 
 selectous.addEventListener("click", function() {
   if (selectous.checked) {
@@ -168,6 +176,7 @@ selectous.addEventListener("click", function() {
         const checkbox = document.getElementById(`check${i}`);
         // Use the checked property to set the state of the checkbox
         checkbox.checked = true;
+
       }
     });
   } else {
@@ -194,8 +203,8 @@ const searchinp = document.getElementById('searchinp');
 
 searchbtn.addEventListener("click", function() {
  
-const searchTerm = searchinp.value;  
-  if (searchTerm !== "" && filtre.value === "code") {
+  const searchTerm = searchinp.value;  
+  if (searchTerm !== "" && filtre.value == "code") {
   const results = codedata.filter((item) => item.code.includes(searchTerm));
   const codes = results.map((item) => item.code );
   var table = '' ; 
@@ -373,15 +382,7 @@ if (esi == 0 ){
     }
 }
             
-            
-
 }); 
-
-
-
-
-
-
 
           cmp = 1 ; 
         } else {
@@ -391,12 +392,14 @@ if (esi == 0 ){
         }
     });
       
-
+  
 
   }
 
- 
+
 });
 
 
 
+
+//-----------------------------------------------------------------------------------------------------------
