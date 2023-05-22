@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients</title>
+    <link rel="stylesheet" href="patients.css">
+</head>
+<body>
+<div class="container">
+    <!--the derower-->
+    <div class="drower">
+        <!--the logo----->
+        <div class="logo">
+           <a href="#"> <img src="/images/Rectangle 51.png"><span  id="cliniquename">Clinic Name</span></a>
+       
+         </div>
+         <div class="pages">
+            <button id="addpat"   >
+                <img src="/images/Group 1000004355.png" > 
+                Add a patient
+            </button>
+             <button id="pat" >
+                 <img src="/images/pat.png" > 
+                 Our patients
+             </button>
+             
+         </div>
+         <div class="logOut">
+             <a ><img src="/images/SignOut1.png" > <span id="signout"  >Log out</span></a>
+         </div>
+     </div>
+     
+     <div class="page">
+     <!--form content-->
+    <div class="form" id="form" >
+     <div class="addPhoto">          
+        <h5>Profil picture</h5>
+        <div class="inside">
+            <img src="/Cliniqueweb-bilel/images/Group 2.png" alt="" srcset="">
+           <input type="file" name="photo" id="photo" >   
+       </div>
+     </div>
+     <!--flex1-->
+     <div class="flex1">
+        <!--name-->
+        <div class="fullname">
+            <h5>Full Name</h5>
+            <input type="text" id="Name" >         
+
+        </div>
+        <!--adress-->
+        <div class="adrress">
+            <h5>Address</h5>
+            <input type="text" id="adr">
+
+        </div>
+
+     </div>
+     <!--flex2-->
+     <div class="flex2">
+        <!--security number-->
+        <div class="secNum">
+            <h5>Patient security number</h5>
+            <input type="number"  id="secNumb">
+        </div>
+        <!--phone number-->
+        <div class="phone">
+            <h5>Phone number</h5>  
+            <input type="tel" id="phonenum">        
+        </div>
+
+     </div>
+     <!--flex3-->
+     <div class="flex3">
+        <!--date of birth-->
+        <div class="dateofbirth">
+            <h5>Date of birth</h5>
+            <input type="date" id="date">
+        </div>
+        <!--patiant status-->
+        <div class="patstat">
+            <h5>Patient status</h5>
+            <input type="text" id="patStat">
+        </div>
+
+     </div>
+     <!--flex4-->
+     <div class="flex4">
+        <!--city-->
+        <div class="city">
+            <h5>City</h5>
+          <select name="city" id="city">
+            <option value="choose" id="choose">choose</option>
+            <option value="city">Choose</option>
+            <option value="Adrar">Adrar</option>
+            <option value="Chlef">Chlef</option>
+            <option value="Laghouat">Laghouat</option>
+            <option value="Oum El Bouaghi">Oum El Bouaghi</option>
+            <option value="Batna">Batna</option>
+            <option value="Béjaïa">Béjaïa</option>
+            <option value="Biskra">Biskra</option>
+            <option value="Béchar">Béchar</option>
+            <option value="Blida">Blida</option>
+            <option value="Bouira">Bouira</option>
+            <option value="Tamanrasset">Tamanrasset</option>
+            <option value="Tébessa">Tébessa</option>
+            <option value="Tlemcen">Tlemcen</option>
+            <option value="Tiaret">Tiaret</option>
+            <option value="Tizi Ouzou">Tizi Ouzou</option>
+            <option value="Alger">Alger</option>
+            <option value="Djelfa">Djelfa</option>
+            <option value="Jijel">Jijel</option>
+        </select>
+       </div>
+        <!--sex-->
+        <div class="sex">
+        <h5>Sex</h5>
+            <select name="city" id="sex">
+                <option value="choose" id="choose">choose</option>
+                <option value="0">Male</option>
+                <option value="1">Female</option>
+            </select>
+        </div>   
+        <!--civil status-->
+        <div class="civilstat">
+            <h5>Civil status</h5>
+            <select name="status" id="status">
+                <option value="choose">Choose</option>
+                <option value="Maried">Maried</option>
+                <option value="Divorced">Divorced</option>
+
+            </select>
+
+        </div>
+        <!--room number-->
+        <div class="roomNum">
+            <h5>Room number</h5>
+            <select name="roomnum" id="roomNum">
+                <option value="choose">choose</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+
+        </div>
+
+     </div>
+     <!--flex5-->
+     <div class="flex5">
+        <button id="save" class="save">save</button>
+
+     </div>
+     
+</div>
+<!--patiant list-->
+       <div class="patslist"  id="patslist" >
+        
+        <!--for the search area-->
+        <div class="searchBar" id="searchBar">
+            <input type="search" id="search" placeholder="search">
+            <button id="searchBtn">Search</button>
+         </div>
+         
+         <div class="list"  id="patientlist" >
+            <!--patient 1-->
+       
+       
+    
+    
+
+       </div> 
+     </div>
+
+   
+    
+   <script src="./patients.bundle.js"></script> 
+</body>
+</html>

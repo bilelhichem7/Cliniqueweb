@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family:'Rubik',sans-serif;
+}
+.logo{
+    margin-left: 15px;
+    margin-top: 52px;
+   margin-bottom: 48px;
+}
+.logo a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo img{
+    
+    width: 37.48px;
+    height: 41.09px;
+}
+.logo span{
+    
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 41px;
+    
+    background: linear-gradient(180deg, #3E6D9C 39.06%, #001253 86.46%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+   
+}
+.container{
+    display: flex;
+ 
+ justify-content: space-between;
+}
+.drower{
+    position:fixed;/*to don't scroll*/
+width: 260px;
+height:100%;
+background: #F6F7FB;
+
+}
+.patiants{
+    
+    margin-left: 260px;
+    
+    width: 1106px;
+  /*  height:max-content;*/
+}
+.pages button {
+    box-sizing: border-box;  
+    width: 239px;
+    height: 40px; 
+   margin-left: 10px;
+   margin-bottom: 15px;
+   background: #F6F7FB;
+   border-style: none;
+   
+    border-radius: 8px;
+    font-weight: 700;
+  font-size:0.8rem;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pages button:hover{
+    cursor: pointer;
+    background: #FFFFFF;
+    border: 1px solid #F0F1F6;
+}
+.pages button img{
+ width: 30px;   
+ height: 30px;
+}
+
+
+ #Doctors img{
+margin-left: -20px;
+}
+.logOut{
+    margin-top: 400px;
+  
+}
+.logOut span{
+    font-weight: 600;
+font-size: 0.85rem;
+color: #000000;
+}
+.logOut a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#nurse, #pharmacy,#reception,#Add{
+   /* display: none;*/
+}
+.page{
+    
+    margin-left: 260px;
+    padding: 50px 91px;
+    width: 1106px;
+    height: 663px;
+}
+.addPhoto{
+   
+    width: 602px;
+    height: 210px;    
+    background: #F6F7FB;
+    border-radius: 16px;
+    padding: 10px;
+    margin-left: 150px;
+}
+.addPhoto h5{
+    margin: 8px 50px;
+}
+.inside{
+margin:30px 50px;
+width: 496.94px;
+height: 122.07px;
+background: rgba(106, 112, 126, 0.0001);
+border: 1px solid rgba(0, 0, 0, 0.36);
+border-radius: 8px;
+}
+.inside input{
+    margin-left: 175px;
+    margin-top: 50px;
+
+}
+.flex1 input, .flex2 input, .flex3 input, .flex4 input{
+    width: 384.01px;
+height: 48.48px;
+left: 349.89px;
+top: 309.78px;
+padding-left: 10px;
+background: rgba(106, 112, 126, 0.0001);
+border: 1px solid #000000;
+border-radius: 13px;
+margin-top: 3px;
+}
+.form select{
+    width: 146.78px;
+height: 49.04px;
+left: 349px;
+top: 577.93px;
+background: rgba(106, 112, 126, 0.0001);
+border: 1px solid #376293;
+border-radius: 13px;
+appearance: none;
+    background-image: url(/images/Group\ 5.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.719);
+    margin-top: 18.75px;
+}
+.save{
+
+    width: 348px;
+height: 48px;
+left: 650px;
+top: 686px;
+border-style: none;
+background: #376293;
+border-radius: 10px;
+font-weight: 500;
+font-size: 1.5rem;
+line-height: 30px;
+text-align: center;
+
+color: #FFFFFF;
+margin: 30px 270px 0px 270px;
+}
+#save:hover{
+    cursor: pointer;
+    background: #4e7096ef;
+}
+.flex1 , .flex2, .flex3,.flex4{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 18.75px;
+    
+}
+h5{
+    line-height: 30px;
+    font-weight: 500;
+font-size: 0.9rem;
+}
+.form{
+    display: none;
+}
+.searchBar{
+   
+    margin-left:400px;
+    
+    display: flex;
+    
+}
+.searchBar input{
+padding: 8px 128px 8px 35px;
+gap: 8px;
+width: 352px;
+height: 44px;
+background: #FFFFFF;
+border: 1px solid #DCDFE3;
+border-radius: 0px 4px 4px 0px;
+flex: none;
+order: 0;
+flex-grow: 0;
+font-weight: 400;
+font-size: 0.9rem;
+background-image: url(/Cliniqueweb-bilel/images/search1.png);
+background-repeat: no-repeat;
+background-position-y: 10px;
+background-position-x: 10px;
+
+}
+.searchBar button{
+  border-style: none;  
+padding: 12px 24px;
+width: 175px;
+height: 44px;
+font-weight: 500;
+font-size: 0.9rem;
+line-height: 20px;
+
+align-items: center;
+letter-spacing: 0.02em;
+
+color: rgba(0, 0, 0, 0.87);
+background: #F6F7FB;
+border-radius: 4px;
+
+}
+.searchBar button:hover{
+    cursor: pointer;
+    background: #dfe0e2;
+}
+.pat1{
+    height: 230px;
+width: 205px;
+    padding: 24px ;
+gap: 24px;
+margin-bottom: 30px;
+background: #FBFBFB;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 16px;
+
+}
+.profpic{
+    border-radius: 150px;
+    margin-left: 39.5px;
+}
+.pat1 .infos{
+    display: flex;
+    flex-direction: column;
+}
+.pat1 .infoflex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    padding: 4px;
+}
+.list{
+padding-top: 12px;
+padding-left: 30px;
+}
+.infos img{
+    width: 30px;
+    height: 30px;
+}
+
+.infos p{
+    font-weight: 400;
+font-size: 0.9rem;
+line-height: 14px;
+text-align: center;
+
+color: #808080;
+
+}
+.nametxt{
+    font-weight: 500;
+font-size: 13px;
+line-height: 15px;
+margin: 15px;
+text-align: center;
+text-transform: uppercase;
+
+/* Color/Font/Black 900 */
+
+color: #141414;
+
+}
+.list{  
+    
+    height: 100%;
+    width: 94%;
+    display: flex;
+   
+    flex-wrap: wrap;
+    margin-top: 55px;
+   justify-content: space-between;
+   
+    
+}
+.patslist{
+display: none;
+}
+

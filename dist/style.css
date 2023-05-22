@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,500;0,700;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@
     scroll-padding-top: 2rem;
     list-style: none;
     text-decoration: none;
-    font-family:'Noto Sans',sans-serif;
+    font-family:'Rubik',sans-serif;
     
    
 }
@@ -16,29 +16,34 @@ section{
     
     padding-top: 70px;  
     padding-left: 60px;
-    background-image: url(/images/Frame\ 123.png);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position-x: right;
-    background-position-y: bottom;
-    background-size: 32% 85%;
+    
+  
+
+
+}
+.home{
+   
 }
 body{
-    background-image: url(/images/Polygon\ 1.svg);
+    background-image: url(/images/Removal-626.png);
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position-x: 150px;
-    background-attachment: fixed;
+    background-size: 1666px 1000px;
+
+background-position-x: -170px;
+    
+    background-position-y: -170px;
+    
+   
 }
-header{
-    position: fixed;
+.header{
+    
     width: 100%; 
     right: 0;
-    z-index: 1000;  
+     
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 11px 51px;
+    padding: 11px 51px 0px;
     
    
 }
@@ -81,7 +86,7 @@ header{
     font-size: 1.563em;
     color: #376293;
 }
-.cu,.app{
+.cu,.appl{
    
     font-size: 1.4rem;
     padding: 10px 15px;
@@ -102,7 +107,7 @@ header{
     
 }
 .text{
-    margin-top: 48px;
+    margin-top: 0px;
 }
 .text h1 {
     font-size: 2.7em;
@@ -223,7 +228,10 @@ color: rgba(0, 0, 0, 0.25);
     color: #FFFFFF;  
 }
 hr{
-    height: 40px;
+    height: 50px;
+    width: 4px;
+    color: #FFFFFF;
+    background-color: #FFFFFF;
 }
 @media (min-width:1450px) {
     .navbar{
@@ -232,14 +240,16 @@ hr{
     .buttn{
         width: 68%;
      }
+     
     
 }
 @media (min-height:750px) {
     body{
-        background-position-x: 170px;
+        background-position-y: -140px;
+        background-size: 1666px 1100px;
     }
     .text{
-        margin-top: 90px;
+       
     }
     .text h1{
         font-size: 3.2rem;
@@ -256,3 +266,142 @@ hr{
 
     
 }
+ #room{
+    font-weight: 700;
+    font-size:1.9rem;
+    text-align: center;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+#redroom{
+    
+}
+/**/
+.page{
+    padding: 30px 52px ;
+    display: flex;
+    flex-direction: column;
+}
+.page .text1 h1{
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 177.9%;
+    text-align: center;
+    letter-spacing: 0.01em;   
+    color: #000000;
+}
+.text1 span{
+    color: #376293;
+}
+.text1 p{
+    line-height: 177.9%;
+text-align: center;
+font-size: 0,7rem;
+letter-spacing: 0.01em;
+color: #505050;
+}
+.cards{
+    margin-top: 23px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.card1 , .card2, .card3{
+    width: 352px;
+height: 400px;
+padding: 20px;
+
+background: rgba(162, 172, 189, 0.14);
+border-radius: 20px;
+margin-bottom: 10px;
+}
+.card1:hover , .card2:hover , .card3:hover{
+    background: #FFFEFE;
+    box-shadow: 0px 4px 250px rgba(0, 0, 0, 0.15);
+}
+.cards img{
+    width: 119px;
+height: 119.7px;
+margin: 36px 111.5px;
+}
+.cards h3{
+    
+line-height: 177.9%;
+text-align: center;
+letter-spacing: 0.01em;
+color: #000000;
+}
+.cards p{
+    font-weight: 400;
+font-size: 16px;
+line-height: 177.9%;
+/* or 28px */
+
+text-align: center;
+letter-spacing: 0.01em;
+
+color: #545454;
+}
+.app{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+.app .dwmld{
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 177.9%;
+    text-align: center;
+    letter-spacing: 0.01em;   
+    color: #000000;
+    
+}
+.app a{
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 177.9%;
+    text-align: center;
+    letter-spacing: 0.01em;  
+    color: #376293;
+}
+.page a:hover{
+    cursor: pointer;
+} 
+.social{
+    font-weight: 500;
+font-size: 1.3rem;
+line-height: 177.9%;
+/* identical to box height, or 34px */
+
+text-align: center;
+letter-spacing: 0.01em;
+
+color: #000000;
+}
+.logos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.logos a{
+    margin-right: 15px;
+}
+#applink{
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+

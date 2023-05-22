@@ -1,7 +1,13 @@
 import { initializeApp } from "firebase/app";
 import { getStorage, ref as storageRef , getDownloadURL, uploadBytes } from "firebase/storage";
 import { getDatabase, push, ref as databaseURL, set , onValue } from "firebase/database";
-import { getAuth,createUserWithEmailAndPassword } from "firebase/auth";  
+import { getAuth,createUserWithEmailAndPassword ,signOut} from "firebase/auth";  
+const tabdoc = [];
+const tabnur = [];
+const tabphar = [];
+const tabrece = [];
+
+
 
 
 
@@ -34,7 +40,9 @@ onValue(starCountRef, (snapshot) => {
   cliniquename.innerHTML = data.nom ;}
 });
 
-
+cliniquename.addEventListener("click",function(){
+  window.location.href = "index.html" ; 
+})
 
 
 const signout = document.querySelector("#signout"); 
@@ -63,7 +71,8 @@ let receplist =document.getElementById('receplist');
 let recepbtn = document.getElementById('Receptionist');
 let AddForm = document.getElementById('AddForm');
 let addbtn = document.getElementById('workers');
-
+const searchbtn = document.getElementById('searchBtn'); 
+const searchinp = document.getElementById('search'); 
 
 
 //show doctors list
@@ -76,6 +85,7 @@ function showdoc(){
     var table = '' ; 
     for (let i  in data){
       if(data[i].UserJob == "doctor"){
+        tabdoc.push({nameuser:data[i].UserName});
         table += `
         <div class="doc1" id="doc1">
         <img src=${data[i].UserImage} alt="">
@@ -104,6 +114,43 @@ pharmbtn.style.background='#F6F7FB';
 recepbtn.style.background='#F6F7FB';
 addbtn.style.background='#F6F7FB';  
 
+ searchbtn.addEventListener("click",function(){
+  const searchTerm = searchinp.value;  
+  if(searchTerm != "") {
+    var table = '' ; 
+    const results = tabdoc.filter((item) => item.nameuser.includes(searchTerm));
+  const codes = results.map((item) => item.nameuser ); 
+for (let k in codes){
+  onValue(starCountRef, (snapshot) => {
+    const data = snapshot.val();   
+    for (let i  in data){
+      if(data[i].UserJob == "doctor"){
+        if (data[i].UserName == codes[k]){
+          table += `
+          <div class="doc1" id="doc1">
+          <img src=${data[i].UserImage} alt="">
+          <div class="infos">
+              <h4>${data[i].UserName}</span><p>${data[i].UserEmail}</p> <p>${data[i].UserPhoneNumber}</p>
+                 <p> ${data[i].spec}</p>
+          </div>
+      </div>
+      `
+        }
+      }
+    }
+   
+  });
+}
+document.getElementById('doclist').innerHTML = table ;
+  }else {
+    setInterval(function() {
+      location.reload();
+    }, 100);
+  }
+ });
+
+
+
 }
 //show nurses list
 function shownur(){
@@ -117,6 +164,7 @@ function shownur(){
           var table = '' ; 
           for (let i  in data){
             if(data[i].UserJob == "nurses"){
+              tabnur.push({inf:data[i].UserName});
               table += `
               <div class="doc1" id="doc1">
               <img src=${data[i].UserImage} alt="">
@@ -140,7 +188,42 @@ function shownur(){
        pharmbtn.style.background='#F6F7FB';
        recepbtn.style.background='#F6F7FB';
        addbtn.style.background='#F6F7FB';  
-        
+
+
+       searchbtn.addEventListener("click",function(){
+        const searchTerm = searchinp.value;  
+        if(searchTerm != "") {
+          var table = '' ; 
+          const results = tabnur.filter((item) => item.inf.includes(searchTerm));
+        const codes = results.map((item) => item.inf ); 
+      for (let k in codes){
+        onValue(starCountRef, (snapshot) => {
+          const data = snapshot.val();   
+          for (let i  in data){
+            if(data[i].UserJob == "nurses"){
+              if (data[i].UserName == codes[k]){
+                table += `
+                <div class="doc1" id="doc1">
+                <img src=${data[i].UserImage} alt="">
+                <div class="infos">
+                    <h4>${data[i].UserName}</span><p>${data[i].UserEmail}</p> <p>${data[i].UserPhoneNumber}</p>
+                       <p> ${data[i].spec}</p>
+                </div>
+            </div>
+            `
+              }
+            }
+          }
+         
+        });
+      }
+      document.getElementById('nurslist').innerHTML = table ;
+        } else {
+          setInterval(function() {
+            location.reload();
+          }, 100);
+        }
+       });
     
 }
 //show pharmasist list
@@ -153,6 +236,7 @@ function shownur(){
       var table = '' ; 
       for (let i  in data){
         if(data[i].UserJob == "pharmacies"){
+          tabphar.push({phr:data[i].UserName})
           table += `
           <div class="doc1" id="doc1">
           <img src=${data[i].UserImage} alt="">
@@ -176,6 +260,45 @@ nurbtn.style.background='#F6F7FB';
 docbtn.style.background='#F6F7FB';
 recepbtn.style.background='#F6F7FB';
 addbtn.style.background='#F6F7FB'; 
+
+searchbtn.addEventListener("click",function(){
+  const searchTerm = searchinp.value;  
+  if(searchTerm != "") {
+    var table = '' ; 
+    const results = tabphar.filter((item) => item.phr.includes(searchTerm));
+  const codes = results.map((item) => item.phr ); 
+for (let k in codes){
+  onValue(starCountRef, (snapshot) => {
+    const data = snapshot.val();   
+    for (let i  in data){
+      if(data[i].UserJob == "pharmacies"){
+        if (data[i].UserName == codes[k]){
+          table += `
+          <div class="doc1" id="doc1">
+          <img src=${data[i].UserImage} alt="">
+          <div class="infos">
+              <h4>${data[i].UserName}</span><p>${data[i].UserEmail}</p> <p>${data[i].UserPhoneNumber}</p>
+                 <p> ${data[i].spec}</p>
+          </div>
+      </div>
+      `
+        }
+      }
+    }
+   
+  });
+}
+document.getElementById('pharmlist').innerHTML = table ;
+  } else {
+    setInterval(function() {
+      location.reload();
+    }, 100);
+  }
+ });
+
+
+
+
  }
 
 //show receptionist list
@@ -188,6 +311,7 @@ addbtn.style.background='#F6F7FB';
       var table = '' ; 
       for (let i  in data){
         if(data[i].UserJob == "Receptioniste"){
+          tabrece.push({rec:data[i].UserName})
           table += `
           <div class="doc1" id="doc1">
           <img src=${data[i].UserImage} alt="">
@@ -211,6 +335,41 @@ addbtn.style.background='#F6F7FB';
    pharmbtn.style.background='#F6F7FB';
    nurbtn.style.background='#F6F7FB';
    addbtn.style.background='#F6F7FB';  
+   searchbtn.addEventListener("click",function(){
+    
+    const searchTerm = searchinp.value;  
+    if(searchTerm != "") {
+      var table = '' ; 
+      const results = tabrece.filter((item) => item.rec.includes(searchTerm));
+    const codes = results.map((item) => item.rec ); 
+  for (let k in codes){
+    onValue(starCountRef, (snapshot) => {
+      const data = snapshot.val();   
+      for (let i  in data){
+        if(data[i].UserJob == "Receptioniste"){
+          if (data[i].UserName == codes[k]){
+            table += `
+            <div class="doc1" id="doc1">
+            <img src=${data[i].UserImage} alt="">
+            <div class="infos">
+                <h4>${data[i].UserName}</span><p>${data[i].UserEmail}</p> <p>${data[i].UserPhoneNumber}</p>
+                   <p> ${data[i].spec}</p>
+            </div>
+        </div>
+        `
+          }
+        }
+      }
+     
+    });
+  }
+  document.getElementById('receplist').innerHTML = table ;
+    } else {
+      setInterval(function() {
+        location.reload();
+      }, 100);
+    }
+   });
    
  }
 //add workers
@@ -230,6 +389,10 @@ nurbtn.style.background='#F6F7FB';
 pharmbtn.style.background='#F6F7FB';
 recepbtn.style.background='#F6F7FB';
 
+
+
+
+
   }
 
 
@@ -245,10 +408,6 @@ const Receptionist = document.querySelector("#Receptionist");
 
 workers.addEventListener("click",function(){
   addwork();
-
-
-
-
 
 });
 
@@ -299,12 +458,28 @@ const spec = document.querySelector("#spec").value;
 if (name === "" || adr === "" || date === "" || city === "" || sex === "" || phone === "" || email === "" || password === "" || job === "" || status === "" || spec === "") {
 alert("Please do not leave any field empty");
 } else {
+  var dialog = document.createElement("div");
+    dialog.innerHTML = '<div class="lds-ring"><div></div><div></div><div></div><div></div></div><div>Veuillez patienter...</div>';
+    dialog.style.background = "rgba(0,0,0,0.5)";
+    dialog.style.color = "#fff";
+    dialog.style.position = "fixed";
+    dialog.style.top = "0";
+    dialog.style.left = "0";
+    dialog.style.width = "100%";
+    dialog.style.height = "100%";
+    dialog.style.display = "flex";
+    dialog.style.justifyContent = "center";
+    dialog.style.alignItems = "center";
+    document.body.appendChild(dialog);
+
+
 const sexe = parseInt(sex);
 
 const now = new Date();
 const isoString = now.toISOString();
 const imageRef = storageRef(storage, 'images/'+photo.value+isoString  );
 const db = databaseURL(database,"user/"); 
+let usid = "" ; 
 // Uploader le fichier
 uploadBytes(imageRef, photo.files[0])
 .then((snapshot) => {
@@ -316,72 +491,56 @@ uploadBytes(imageRef, photo.files[0])
      // Insérer l'URL de téléchargement de l'image dans la balise <img>
      const img = document.createElement("img");
      img.src = url;
-     document.body.appendChild(img);
-     const newRecordRef = push(db);
-     const newRecordKey = newRecordRef.key;
+
+    
+     
      createUserWithEmailAndPassword(auth, email, password)
      .then((userCredential) => {
        // Signed in 
        const user = userCredential.user;
+        usid = user.uid ; 
+        console.log(usid);
+        set(databaseURL(database, "user/" + usid), {
+          userId: usid , 
+          UserImage : url , 
+          UserName : name , 
+          UserAdresse : adr , 
+          BirthOfUser : date , 
+          UserCity : city , 
+          UserGender : sexe , 
+          UserEmail : email , 
+          UserPhoneNumber : phone,
+          spec : spec , 
+          UserJob : job ,
+          UserStatus : status 
+        }
+        );
+
+        document.body.removeChild(dialog);
+        alert("User Added")
+      
+         
        // ...
      })
      .catch((error) => {
+      document.body.removeChild(dialog);
        const errorCode = error.code;
        const errorMessage = error.message;
        // ..
      });
-   
-
-
-
-
-     const newData = {
-      userId: newRecordKey , 
-      UserImage : url , 
-      UserName : name , 
-      UserAdresse : adr , 
-      BirthOfUser : date , 
-      UserCity : city , 
-      UserGender : sexe , 
-      UserEmail : email , 
-      UserPhoneNumber : phone,
-      spec : spec , 
-      UserJob : job ,
-      UserStatus : status 
-    }
-
-    set(newRecordRef, newData) 
-       alert("USER ADDED")
-
+  
    })
    .catch((error) => {
+    document.body.removeChild(dialog);
      console.error("Error getting download URL: ", error);
    });
 })
 .catch((error) => {
+  document.body.removeChild(dialog);
  console.error("Error uploading image: ", error);
+});}
 });
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
-});
 

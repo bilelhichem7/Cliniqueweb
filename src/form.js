@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase, push, ref as databaseURL, set , onValue } from "firebase/database";
-
+import { getAuth,signOut } from "firebase/auth";  
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -20,10 +20,61 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
+const auth = getAuth(app);
 const database = getDatabase(app);
+
+
+
 const send = document.querySelector("#send") ; 
 
+const rommnumber = document.querySelector("#room") ; 
+
+
+ 
+
+const starCountReff = databaseURL(database,"NumberofRoom");
+onValue(starCountReff, (snapshot) => {
+  const data = snapshot.val(); 
+  let cmp = 0 ; 
+  for(let i in data){
+    cmp+=1 ; 
+      if(data[i].status == true){
+        const option = document.createElement('option');
+        option.value = `${cmp}`;
+        option.text = `${cmp}`;
+        rommnumber.add(option);
+      
+      }
+  };
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//...............................................................
 send.addEventListener("click" , function(){
   const db = databaseURL(database,"FormPatient/");
 
@@ -43,6 +94,10 @@ const sex = parseInt(sexe) ;
 if(name == "" || adress == "" || dateofbirth == "" || city == "" || civilstatus == ""  || sexe == "" || rommnumber == "" || chronicdiseas == "" || phonenumber == "" || patsecnumb == ""){
     alert("SVP DON'T LET ANYTHING EMPTY")
 }else {
+
+
+
+
   const sex = parseInt(sexe) ; 
     const newRecordRef = push(db);
      const newRecordKey = newRecordRef.key;
@@ -59,10 +114,18 @@ if(name == "" || adress == "" || dateofbirth == "" || city == "" || civilstatus 
       PatientPhoneNumber : phonenumber , 
       PatientSecurityNumber : patsecnumb 
     }
-    set(newRecordRef, newData) 
+    set(newRecordRef, newData) ;
 
  
+   
+ const dbb = databaseURL(database,"NumberofRoom/" + rommnumber);
+set((dbb),{
+  status : false 
+});
        alert("PATIENT SEND") ; 
+       setInterval(function() {
+        location.reload();
+      }, 100);
 
 
 }
@@ -77,5 +140,52 @@ if(name == "" || adress == "" || dateofbirth == "" || city == "" || civilstatus 
 
 
 });
+
+
+
+
+
+
+const cliniquename = document.querySelector("#cliniquename"); 
+const starCountRef = databaseURL(database,"cliniquename");
+onValue(starCountRef, (snapshot) => {
+  const data = snapshot.val();
+  if(data != ""){
+  cliniquename.innerHTML = data.nom ;}
+});
+
+cliniquename.addEventListener("click",function(){
+  window.location.href = "index.html" ; 
+});
+
+
+
+
+
+const  log = document.querySelector("#log") ; 
+
+log.addEventListener("click",function(){
+  console.log("hjh");
+  signOut(auth).then(() => {
+    window.location.href = "index.html";
+    }).catch((error) => {
+    // An error happened.
+  });
+   
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

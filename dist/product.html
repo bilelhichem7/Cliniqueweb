@@ -11,15 +11,16 @@
    <!--the head-->
 <div class="head">
     <div class="navbar">
-   <img src="/images/Group 29.png" alt="">
+        <img src="/images/Rectangle 52.svg" alt="">
+        <span id="cliniquename">Clinic Name</span>
    <div class="log-out">
-      <a href="./pharmacy.html" class="logOut"> <img src="/images/SignOut.svg" alt="">
-       <span>Log Out</span></a>
+      <a href="" class="logOut"> <img src="/images/SignOut.svg" alt="">
+       <span  id="logout" >Log Out</span></a>
    </div>
    </div>
    <div class="btns">
        <select name="filtre" id="filtre">
-           <option value="All">All</option>
+           <option value="All">Rechercher</option>
            <option value="code" id="codeFilter">code</option>
            <option value="product" id="nameFilter">product</option>
        </select>
@@ -30,8 +31,10 @@
        
        <button class="searchbtn" id="searchbtn"><span> Search</span></button>
        <div class="modif">
+        <button class="add" id="export" ><img src="/images/add.png" alt=""> export</button>
            <button class="add" id="btntext" ><img src="/images/add.png" alt=""> Add</button>
-           <button class="deletem" onclick="dtm()"><img src="/images/delete.png" alt=""> Delete</button>
+           <button class="deletem"  id="delet" ><img src="/images/delete.png" alt=""> Delete</button>
+           <div class="xl"  ><input  id="uplaod"  type="file"></div>
        </div>
    </div>
 </div>
@@ -49,7 +52,7 @@
 <!---->
        <table cellspacing="0" > 
            <tr class="tr1" >
-               <th ><input type="checkbox" id="checkAll" class="checkALL" onclick="checkal()"></th>
+               <th ><input type="checkbox" id="checkAll" class="checkALL"></th>
                <th>Code</th>
                <th>Products</th>
                <th>Quantity</th>
@@ -64,7 +67,6 @@
                <td><input type="number" name="code" id="code" placeholder="code"></td>
                <td>
                 <input type="text" id="productt" placeholder="product">
-                <input type="text" id="dose" placeholder="dose">
              </td>
                <td><input type="number" id="quantity" class="quantity" placeholder="quantity"></td>
                <td><input type="number" name="order-number" id="ordernumber" placeholder="order-number"></td>
@@ -72,21 +74,16 @@
                <td><input type="date" name="Expiration-date" id="Expirationdate" placeholder="Expiration date"></td>
                
            </tr>
-           
+                                                                                                                            
 
-           <tbody id="tbody"><!--we add here with-->
-              <!--
-              
-       -->
-        
-       
-           </tbody>
-       </table>
+           <tbody id="tbody"><!--we add here with--> <!----> </tbody>
+
+        </table>
       </div>
-
    </div>
 
-
+   <script src="/src/table2excel.js"></script>
+    <script src="https://unkpg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></script>
   <script src="product.bundle.js"></script>  
 </body>
 </html>
