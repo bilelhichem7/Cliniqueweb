@@ -276,9 +276,7 @@ hr{
     align-items: center;
     
 }
-#redroom{
-    
-}
+
 /**/
 .page{
     padding: 30px 52px ;
@@ -403,5 +401,47 @@ color: #000000;
 
 
 
+.prompt-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prompt-dialog {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    max-width: 400px;
+}
+
+.prompt-dialog input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.prompt-dialog button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+.prompt-dialog button:hover {
+    background-color: #0056b3;
+}
 
 

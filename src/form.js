@@ -53,27 +53,6 @@ onValue(starCountReff, (snapshot) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //...............................................................
 send.addEventListener("click" , function(){
   const db = databaseURL(database,"FormPatient/");
