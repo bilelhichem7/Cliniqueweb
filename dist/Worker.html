@@ -98,87 +98,150 @@
                 <img src="/Cliniqueweb-bilel/images/Group 2.png" alt="" srcset="">
                <input type="file" name="photo" id="photo" >
            
-        </div>
+          </div>
          </div>
-         <div class="inf">
-         <input type="text" placeholder="Full Name" id="name">
-         <input type="text" placeholder="Address" id="adr">
+
+     <div class="inf">
+         
          
          <!--first flex-->
-        <div class="flex1">
-         <div class="date">
-            <h5>Date of birth</h5>
-            <input type="date" name="" id="date">
-         </div>
-         <div class="city">
-            <h5>City</h5>
-            <select name="city" id="city">
-                <option value="choose" id="choose">choose</option>
-                <option value="city">Choose</option>
-                <option value="Adrar">Adrar</option>
-                <option value="Chlef">Chlef</option>
-                <option value="Laghouat">Laghouat</option>
-                <option value="Oum El Bouaghi">Oum El Bouaghi</option>
-                <option value="Batna">Batna</option>
-                <option value="Béjaïa">Béjaïa</option>
-                <option value="Biskra">Biskra</option>
-                <option value="Béchar">Béchar</option>
-                <option value="Blida">Blida</option>
-                <option value="Bouira">Bouira</option>
-                <option value="Tamanrasset">Tamanrasset</option>
-                <option value="Tébessa">Tébessa</option>
-                <option value="Tlemcen">Tlemcen</option>
-                <option value="Tiaret">Tiaret</option>
-                <option value="Tizi Ouzou">Tizi Ouzou</option>
-                <option value="Alger">Alger</option>
-                <option value="Djelfa">Djelfa</option>
-                <option value="Jijel">Jijel</option>
+     <div class="flex1">
+        <!--semi flex1-->
+        <div class="sf1">
+             <!--job-->
+           <div class="job">
+            <h5>Job</h5>
+            <select name="job" id="job">
+                <option value="choose"></option>
+                <option value="doctor">DOCTOR</option>
+                <option value="nurses">Nurses</option>
+                <option value="pharmacies">Pharmacies</option>
+                <option value="Receptioniste">Receptioniste</option>
+
+
             </select>
-         </div>
-         <div class="Sex">
-            <h5>Sex</h5>
-            <select name="city" id="sex">
-                <option value="choose" id="choose">choose</option>
-                <option value="0">Male</option>
-                <option value="1">Female</option>
+           </div>
+           <!--speciality-->
+           <div class="Speciality">
+            <h5>Speciality</h5>
+            <select name="spec" id="spec">
+                <option value="choose"></option>
             </select>
-         </div>
-         <div class="phone">
-            <h5>Phone number</h5>
-            <input type="tel" name="" id="phone" placeholder="07-00-00-00-00">
-         </div>
-        </div> 
+           </div>
+        </div>
+         <!--name-->
+         <div class="named">
+            <h5>Full Name</h5>
+        <input type="text" placeholder="Full Name" id="name">     
+       </div>   
+     </div> 
+
         <!--second flex-->
       <div class="flex2">
-        <input type="email" name="email" id="email" placeholder="email">
+        <!--email-->
+        <div class="email">
+            <h5>Email</h5>
+         <input type="email" name="email" id="email" placeholder="email">
+       </div>
+        <!--password-->
+        <div class="pass">
+            <h5>Password</h5>
         <input type="password" name="password" id="password" placeholder="Password">
+      </div>
+
+
       </div>
         <!--third flex-->
         <div class="flex3">
-            <div class="job">
-                <h5>Job</h5>
-                <select name="job" id="job">
-                    <option value="choose">Choose</option>
-                    <option value="doctor">DOCTOR</option>
-                    <option value="nurses">Nurses</option>
-                    <option value="pharmacies">Pharmacies</option>
-                    <option value="Receptioniste">Receptioniste</option>
+           <!--date-->
+       <div class="date">
+           <h5>Date of birth</h5>
+           <input type="date" name="" id="date">
+        </div> 
+        <!--phone-->
+       <div class="phone">
+           <h5>Phone number</h5>
+           <input type="tel" name="" id="phone" placeholder="07-00-00-00-00">
+        </div>
+            
+            
+        </div>
+        <!--flex4-->
+        <div class="flex4">
+            <div class="sf2">
+                <!--city-->
+              <div class="city">
+                  <h5>City</h5>
+                  <select name="city" id="city">
+                     <option value="choose" id="choose">choose</option>
+                     <option value="city"></option>
+                     <option value="Adrar">Adrar</option>
+                     <option value="Chlef">Chlef</option>
+                     <option value="Laghouat">Laghouat</option>
+                     <option value="Oum El Bouaghi">Oum El Bouaghi</option>
+                     <option value="Batna">Batna</option>
+                     <option value="Béjaïa">Béjaïa</option>
+                     <option value="Biskra">Biskra</option>
+                     <option value="Béchar">Béchar</option>
+                     <option value="Blida">Blida</option>
+                     <option value="Bouira">Bouira</option>
+                     <option value="Tamanrasset">Tamanrasset</option>
+                     <option value="Tébessa">Tébessa</option>
+                     <option value="Tlemcen">Tlemcen</option>
+                     <option value="Tiaret">Tiaret</option>
+                     <option value="Tizi Ouzou">Tizi Ouzou</option>
+                     <option value="Alger">Alger</option>
+                     <option value="Djelfa">Djelfa</option>
+                     <option value="Jijel">Jijel</option>
+                  </select>
+               </div>
+               <!--sex-->
+               <div class="Sex">
+                   <h5>Sex</h5>
+                   <select name="city" id="sex">
+                       <option value="choose" id="choose"></option>
+                       <option value="0">Male</option>
+                       <option value="1">Female</option>
+                   </select>
+                </div>
 
-
-                </select>
             </div>
-            <div class="status">
+            <div class="sf3">
+                <!--status-->
+              <div class="status">
                 <h5>Civil status</h5>
                 <select name="status" id="status">
-                    <option value="choose">Choose</option>
+                    <option value="choose"></option>
                     <option value="Maried">Maried</option>
                     <option value="Divorced">Divorced</option>
 
                 </select>
+             </div>
+             <!--job-->
+         <div class="job">
+             <h5>Job</h5>
+             <select name="job" id="job">
+                 <option value="choose"></option>
+                 <option value="doctor">DOCTOR</option>
+                 <option value="nurses">Nurses</option>
+                 <option value="pharmacies">Pharmacies</option>
+                 <option value="Receptioniste">Receptioniste</option>
+
+
+             </select>
+         </div>
+
             </div>
-            <div class="Speciality">
-                <input type="text" name="spec" id="spec" placeholder="Choose">
-            </div>
+
+        </div>
+        <!--flex5-->
+        <div class="flex5">
+            <!--address-->
+            <div class="adrss">
+                <h5>Address</h5>
+         <input type="text" placeholder="Address" id="adr">
+        </div>
+
         </div>
     </div>
         <button id="save"> Save</button>

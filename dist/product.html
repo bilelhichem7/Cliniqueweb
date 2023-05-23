@@ -11,7 +11,7 @@
    <!--the head-->
 <div class="head">
     <div class="navbar">
-        <img src="/images/Group 29.png" alt="">
+        <img src="/images/Rectangle 52.svg" alt="">
         <span id="cliniquename">Clinic Name</span>
    <div class="log-out">
       <a href="" class="logOut"> <img src="/images/SignOut.svg" alt="">
@@ -31,8 +31,10 @@
        
        <button class="searchbtn" id="searchbtn"><span> Search</span></button>
        <div class="modif">
+        <button class="add" id="export" ><img src="/images/add.png" alt=""> export</button>
            <button class="add" id="btntext" ><img src="/images/add.png" alt=""> Add</button>
            <button class="deletem"  id="delet" ><img src="/images/delete.png" alt=""> Delete</button>
+           <div class="xl"  ><input  id="uplaod"  type="file"></div>
        </div>
    </div>
 </div>
@@ -72,21 +74,16 @@
                <td><input type="date" name="Expiration-date" id="Expirationdate" placeholder="Expiration date"></td>
                
            </tr>
-           
+                                                                                                                            
 
-           <tbody id="tbody"><!--we add here with-->
-              <!--
-              
-       -->
-        
-       
-           </tbody>
-       </table>
+           <tbody id="tbody"><!--we add here with--> <!----> </tbody>
+
+        </table>
       </div>
-
    </div>
+
    <script src="/src/table2excel.js"></script>
-<script src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></script>
+    <script src="https://unkpg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></script>
   <script src="product.bundle.js"></script>  
 </body>
 </html>

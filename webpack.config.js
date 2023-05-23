@@ -12,7 +12,8 @@ module.exports = {
    form:'./src/form.js',
    admin:'./src/admin.js',
    Worker:'./src/Worker.js',
-   product:'./src/product.js'
+   product:'./src/product.js',
+   patients:'./src/patients.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

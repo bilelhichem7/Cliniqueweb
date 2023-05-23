@@ -38,7 +38,7 @@ let quantity= document.getElementById('quantity');
 let ordernumber = document.getElementById('ordernumber');
 let Batchnumber = document.getElementById('Batchnumber');
 let Expirationdate = document.getElementById('Expirationdate');
-const selectous = document.getElementById("checkAll");
+
 
 let add=document.getElementById('btntext');
 //check all products//hide and show modification buttons
@@ -88,11 +88,10 @@ const starCountRef = databaseURL(database,"Medicament/");
 onValue(starCountRef, (snapshot) => {
   const data = snapshot.val();   
   var table = '' ; 
- 
   for (let i  in data){
     codedata.push( {code:data[i].MedCode}); 
     productdata.push( {product:data[i].MedNameProduct}); 
-    
+
       table += `
       <tr id="index${i}" >
       <td><input type="checkbox" id="check${i}" style="width: 35px;height: 35px;"></td>
@@ -133,18 +132,10 @@ delet.addEventListener("click", function() {
   
     medIdsToDelete.forEach((medId) => {
       remove(databaseURL(database, `Medicament/${medId}`))
-        .then(() => console.log(`Medication with ID ${medId} deleted successfully`
-           
-        )
-        )
+        .then(() => console.log(`Medication with ID ${medId} deleted successfully`))
         .catch((error) => console.error(`Error deleting medication with ID ${medId}: ${error}`));
     });
   });
-  selectous.checked = false ; 
-  setInterval(function() {
-    location.reload();
-  }, 200);
-
 });
 
 
@@ -166,7 +157,7 @@ logout.addEventListener("click",function(){
 //....slection tous .......................
 
 
-
+const selectous = document.getElementById("checkAll");
 
 selectous.addEventListener("click", function() {
   if (selectous.checked) {
@@ -176,7 +167,6 @@ selectous.addEventListener("click", function() {
         const checkbox = document.getElementById(`check${i}`);
         // Use the checked property to set the state of the checkbox
         checkbox.checked = true;
-
       }
     });
   } else {
@@ -203,8 +193,8 @@ const searchinp = document.getElementById('searchinp');
 
 searchbtn.addEventListener("click", function() {
  
-  const searchTerm = searchinp.value;  
-  if (searchTerm !== "" && filtre.value == "code") {
+const searchTerm = searchinp.value;  
+  if (searchTerm !== "" && filtre.value === "code") {
   const results = codedata.filter((item) => item.code.includes(searchTerm));
   const codes = results.map((item) => item.code );
   var table = '' ; 
@@ -377,29 +367,120 @@ if (esi == 0 ){
             document.getElementById('tr2').style.display='none';
             btnupdate.textContent = "update" ;  
             esi = 0 ; 
-     
-
     }
 }
             
-}); 
-
-          cmp = 1 ; 
+})
+cmp = 1 ; 
         } else {
+          btn2.style.display = "none" ;
+            cmp = 0 ; }});}});
 
-          btn2.style.display = "none" ; 
-          cmp = 0 ; 
-        }
-    });
-      
-  
+//..................................................................................................................................
 
+
+var rowtab = [] ;
+var coltab = [] ; 
+import readXlsxFile from 'read-excel-file'
+const input = document.querySelector("#uplaod");
+
+
+
+ input.addEventListener('change',function(){
+   coltab = [] ; 
+   rowtab = [] ; 
+    readXlsxFile(input.files[0]).then(function(data){
+     var i = 0 ; 
+ 
+   data.map((row,index)=>{
+     if (i == 0 ) {
+        rowtab.push(row);
+     }
+     if (i>0){
+       coltab.push(row);
+     }
+
+     i++ ; 
+   });
+     i = 0 ; 
+   for(let k in coltab){
+     const newRecordRef = push(db);
+     const newRecordKey = newRecordRef.key;
+       const newData = {
+         medid : newRecordKey ,
+         MedNameProduct : coltab[k][1] , 
+         MedCode : coltab[k][0] , 
+         MedQuantity : coltab[k][2] , 
+         MedOrderNumber : coltab[k][3] , 
+         MedBachNumber : coltab[k][4] , 
+         MedExpirationDate : coltab[k][5]
+       } ; 
+       set(newRecordRef, newData) ;
+           input.value = "" ;      
+   } 
+    })
+ });
+
+
+
+ const exporte = document.querySelector('#export'); 
+
+
+
+
+
+ function generateTable(data) {
+  const table = document.createElement('table');
+  // Add a table header row
+  const headerRow = document.createElement('tr');
+  for (const header of data[0]) {
+    const headerCell = document.createElement('th');
+    const text = document.createTextNode(header);
+    headerCell.appendChild(text);
+    headerRow.appendChild(headerCell);
+  }
+  table.appendChild(headerRow);
+
+  // Add the rest of the rows
+  for (let i = 1; i < data.length; i++) {
+    const row = data[i];
+    const tableRow = document.createElement('tr');
+    for (const cell of row) {
+      const tableCell = document.createElement('td');
+      const text = document.createTextNode(cell);
+      tableCell.appendChild(text);
+      tableRow.appendChild(tableCell);
+    }
+    table.appendChild(tableRow);
   }
 
+  return table;
+}
+
+
+
+exporte.addEventListener("click",function(){
+  const dataa = [["code","product","Quantity","Order number" , "Batch number","Expiration date" ] ];
+
+  const starCountReff = databaseURL(database,"Medicament/");
+
+  onValue(starCountReff, (snapshot) => {
+    const data = snapshot.val(); 
+    for(let k in data){
+        dataa.push([data[k].MedCode , data[k].MedNameProduct,data[k].MedQuantity,data[k].MedOrderNumber,data[k].MedBachNumber,data[k].MedExpirationDate]);
+    }
+  }) ; 
+
+
+  var table2excel = new Table2Excel();
+  table2excel.export(generateTable(dataa));
 
 });
 
 
 
 
-//-----------------------------------------------------------------------------------------------------------
+
+
+
+

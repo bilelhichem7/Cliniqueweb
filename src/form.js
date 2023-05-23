@@ -22,6 +22,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const database = getDatabase(app);
+
+
+
 const send = document.querySelector("#send") ; 
 
 const rommnumber = document.querySelector("#room") ; 

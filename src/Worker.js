@@ -336,6 +336,7 @@ document.getElementById('pharmlist').innerHTML = table ;
    nurbtn.style.background='#F6F7FB';
    addbtn.style.background='#F6F7FB';  
    searchbtn.addEventListener("click",function(){
+    
     const searchTerm = searchinp.value;  
     if(searchTerm != "") {
       var table = '' ; 
@@ -407,10 +408,6 @@ const Receptionist = document.querySelector("#Receptionist");
 
 workers.addEventListener("click",function(){
   addwork();
-
-
-
-
 
 });
 

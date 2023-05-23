@@ -46,7 +46,7 @@ onAuthStateChanged(auth, (user) => {
     onValue(starCountRef, (snapshot) => {
       const data = snapshot.val();
       if (data == "Receptioniste"){
-        window.location = "form.html";
+        window.location = "patients.html";
       }
     });
    
@@ -88,7 +88,7 @@ login.addEventListener("click",function(){
           const data = snapshot.val();
           if (data == "Receptioniste"){
             document.body.removeChild(dialog);
-            window.location = "form.html";
+            window.location = "patients.html";
           }else {
             document.body.removeChild(dialog);
             alert("Errore");

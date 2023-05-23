@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,500;0,700;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
 *{
     padding: 0;
     margin: 0;
     list-style: none;
     text-decoration: none;
-    font-family:'Noto Sans',sans-serif;
+    font-family:'Rubik',sans-serif;
 }
 .logo{
     margin-left: 15px;
@@ -147,43 +147,50 @@ border-radius: 4px;
    
     flex-wrap: wrap;
     margin-top: 55px;
-   
+   margin-left: 65px;
     
 }
 .doc1 {
-    width: 300px;
-    margin-left: 30px;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  
+    height:300px;
+    width: 280px;
+    margin-left: 30px;   
+    gap: 24px;
+    margin-bottom: 35px;
+    background: #FBFBFB;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
 }
 .doc1 img {
-    width: 290px;
-    height: 180px;
-    object-fit: unset;
-    border-radius: 5%;
+    width: 117px;
+    height: 126px;
+    margin:17px 80px;
+    border-radius: 190px;
 }
 .doc1 .infos {
     text-align: center;
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
 }
 .doc1 h4 {
-    margin: 0;
-    font-size: 15px;
-    font-weight: bold;
-    color: #000000;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 15px;  
+    text-transform: uppercase;
+    
+    /* Color/Font/Black 900 */
+    
+    color: #141414;
 }
 .doc1 p {
-    margin: 0;
-    font-size: 16px;
-    color: rgba(0, 0, 0, 0.16);
-    text-decoration-line: underline;
-    font-weight: 600;
+    margin-top: 5px;
+    font-weight: 300;
+font-size: 0.8rem;
+line-height: 14px;
+text-align: center;
+
+color: #808080;
 }
 
 
@@ -201,6 +208,8 @@ border-radius: 4px;
     margin-left: 150px;
 }
 .addPhoto h5{
+    font-weight: 500;
+    font-size: 0.9rem;
     margin: 8px 50px;
 }
 .inside{
@@ -212,7 +221,7 @@ border: 1px solid rgba(0, 0, 0, 0.36);
 border-radius: 8px;
 }
 .add{
-   margin-left: 76px;
+   margin: 80px;
    margin-top: 50px;
    display: flex;
    
@@ -221,125 +230,87 @@ border-radius: 8px;
     margin: 20px 217px;
 }
 .inside input{
-    margin-left: 120px;
+    margin-left: 150px;
 
 }
+
+.inf{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .inf input{
-    margin-top: 20px;
-    padding-left: 10px;
-    background: rgba(106, 112, 126, 0.0001);
+    width: 386.96px;
+    padding: 0px 10px;
+height: 46.68px;
+background: rgba(106, 112, 126, 0.0001);
 border: 1px solid #000000;
 border-radius: 13px;
+font-size: 0.9rem;
+font-weight: 400;
 }
-#name , #adr{ 
-   width: 980px;
-    height: 50.46px; 
-    background: rgba(106, 112, 126, 0.0001);
-    border: 1px solid #000000;
-    border-radius: 13px;
-}
-select{
-    box-sizing: border-box;
-    width: 164.36px;
-    height: 48.59px;
-    
-    background: rgba(106, 112, 126, 0.0001);
-    border: 1px solid #376293;
-    border-radius: 13px;
-    appearance: none;
+.inf select{
+    width: 145.43px;
+height: 46.68px;
+background: rgba(106, 112, 126, 0.0001);
+border: 1px solid #000000;
+border-radius: 13px;
+appearance: none;
     background-image: url(/images/Group\ 5.svg);
     background-repeat: no-repeat;
     background-position: right;
     padding: 10px;
     font-weight: 600;
     font-size: 0.9rem;
-    color: rgba(0, 0, 0, 0.719);
-}
-.flex1{
-    display: flex;
-   justify-content: space-between;
-   margin-top: 20px;
-   margin-right: 40px;
-}
-.flex1 input{
-    
-height: 48.59px;
-
-
-}
-.date{
-    width: 233.68px;
-}
-.phone{
-    width: 326px;
-}
-.date, .city,.Sex,.phone{
-    display: flex;
-    flex-direction: column;
     
 }
-.flex1 h5{
-    margin-left: 30px;
-}
-.flex1 select{
+.flex1 , .flex2, .flex3, .flex4, .flex5{
     margin-top: 20px;
-}
-.flex2{
+
     display: flex;
     flex-direction: row;
-    
-}
-.flex2 input{
- 
-width: 490px;
-height: 48.59px;
-margin-right: 40px;
-
-background: rgba(106, 112, 126, 0.0001);
-border: 1px solid #000000;
-border-radius: 13px;
-}
-.flex3{
-    display: flex;
-    flex-direction: row;
-   
-    margin-top: 14px;
-
-}
-.flex3 input{
-    width: 497px;
-height: 48px;
-}
-.flex3 h5{
-    margin-left: 10px;
-}
-.job ,.status,.Speciality{
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    margin-right: 75px;
 }
+
+.sf1, .sf2,.sf3{
+    width: 410px;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.inf h5{
+    font-weight: 500;
+font-size: 1rem;
+line-height: 19px;
+
+color: #000000;
+margin-left: 7px;
+margin-bottom: 3px;
+}
+
 #save{
-    width: 147px;
-height: 50px;
-margin-left: 395px;
-margin-top: 44px;
+    width: 348px;
+height: 48px;
+left: 650px;
+top: 686px;
 border-style: none;
 background: #376293;
 border-radius: 10px;
-font-weight: 700;
-font-size: 1.5rem;
-line-height: 34px;
-
-
 text-align: center;
-
+font-weight: 500;
+font-size: 1.5rem;
+line-height: 30px;
+text-align: center;
 color: #FFFFFF;
+margin: 33px 291px;
 }
 #save:hover{
     cursor: pointer;
     background: #4e7096ef;
 }
+
 
 
 
