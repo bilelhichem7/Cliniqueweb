@@ -55,16 +55,44 @@ cliniquename.addEventListener("click",function(){
   const starCountRef = ref(database,"user/" + userid +"/UserJob" ); 
     onValue(starCountRef, (snapshot) => {
       const data = snapshot.val();
-      if (data == "admin"){    
-  let nom = prompt("chose name :");
-  if (nom != null){
+      if (data == "admin"){      
+        var overlay = document.createElement('div');
+      overlay.className = 'prompt-overlay';
+  
+      var dialog = document.createElement('div');
+      dialog.className = 'prompt-dialog';
+  
+      var input = document.createElement('input');
+      input.type = 'text';
+  
+      var button = document.createElement('button');
+      button.textContent = 'Valider';
+      button.onclick = function() {
+        var nom = input.value;
+        if (nom) {
+          if (nom != null){
 
-    set(ref(database, 'cliniquename/' ), {
-      nom : nom ,
-     } 
-     );
-     cliniquename.innerHTML = nom ;  } 
-      }
+            set(ref(database, 'cliniquename/' ), {
+              nom : nom ,
+             } 
+             );
+             cliniquename.innerHTML = nom ;  } 
+            console.log('Nom saisi :', nom);
+        }
+        document.body.removeChild(overlay);
+    };
+
+    dialog.appendChild(input);
+    dialog.appendChild(button);
+    overlay.appendChild(dialog);
+    document.body.appendChild(overlay);
+
+
+
+
+   
+   
+    }
     });
 });
 
@@ -81,23 +109,46 @@ room.addEventListener("click",function(){
   onValue(starCountRef, (snapshot) => {
     const data = snapshot.val();
     if (data == "admin"){    
-      let nom = prompt("Number of room :");
-
-      if (nom != null){
-          let i = parseInt(nom); 
-         for(let k = 1 ; k <=  i ; k ++ ){
-          set(ref(database, 'NumberofRoom/' + `/${k}` ), {
-            status : true 
+      var overlay = document.createElement('div');
+      overlay.className = 'prompt-overlay';
+  
+      var dialog = document.createElement('div');
+      dialog.className = 'prompt-dialog';
+  
+      var input = document.createElement('input');
+      input.type = 'text';
+  
+      var button = document.createElement('button');
+      button.textContent = 'Valider';
+      button.onclick = function() {
+        var nom = input.value;
+        if (nom) {
+          if (nom != null){
+            let i = parseInt(nom); 
+           for(let k = 1 ; k <=  i ; k ++ ){
+            set(ref(database, 'NumberofRoom/' + `/${k}` ), {
+              status : true 
+             } 
+             );
+           }
            } 
-           );
-         }
-         } 
+            console.log('Nom saisi :', nom);
+        }
+        document.body.removeChild(overlay);
+    };
+
+    dialog.appendChild(input);
+    dialog.appendChild(button);
+    overlay.appendChild(dialog);
+    document.body.appendChild(overlay);
+
+    
     }
   });
 });
 
 
-const redroom = document.querySelector("#room");
+const redroom = document.querySelector("#redroom");
 
 
 const starCountRefe = ref(database, 'NumberofRoom');

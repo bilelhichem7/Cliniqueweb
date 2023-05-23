@@ -78,7 +78,10 @@ const searchinp = document.getElementById('search');
 //show doctors list
 function showdoc(){
   docbtn.style.background='#FFFFFF';
-  doclist.style.display='flex';
+    doclist.style.display = 'flex';
+    doclist.style.justifyContent = 'center';
+    doclist.style.alignItems = 'center';
+
   const starCountRef = databaseURL(database,"user/");
   onValue(starCountRef, (snapshot) => {
     const data = snapshot.val();   
@@ -157,7 +160,8 @@ function shownur(){
    
         nurbtn.style.background='#FFFFFF';
         nurslist.style.display='flex';
-
+        nurslist.style.justifyContent = 'center';
+        nurslist.style.alignItems = 'center';
         const starCountRef = databaseURL(database,"user/");
         onValue(starCountRef, (snapshot) => {
           const data = snapshot.val();   
@@ -230,6 +234,8 @@ function shownur(){
  function showphar(){
     pharmbtn.style.background='#FFFFFF';
     pharmlist.style.display='flex';
+    pharmlist.style.justifyContent = 'center';
+pharmlist.style.alignItems = 'center';
     const starCountRef = databaseURL(database,"user/");
     onValue(starCountRef, (snapshot) => {
       const data = snapshot.val();   
@@ -305,6 +311,8 @@ document.getElementById('pharmlist').innerHTML = table ;
  function showrecep(){
     recepbtn.style.background='#FFFFFF';
     receplist.style.display='flex';
+    receplist.style.justifyContent = 'center';
+receplist.style.alignItems = 'center';
     const starCountRef = databaseURL(database,"user/");
     onValue(starCountRef, (snapshot) => {
       const data = snapshot.val();   
@@ -491,8 +499,6 @@ uploadBytes(imageRef, photo.files[0])
      // Insérer l'URL de téléchargement de l'image dans la balise <img>
      const img = document.createElement("img");
      img.src = url;
-
-    
      
      createUserWithEmailAndPassword(auth, email, password)
      .then((userCredential) => {
