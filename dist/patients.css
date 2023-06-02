@@ -245,32 +245,54 @@ border-radius: 4px;
     cursor: pointer;
     background: #dfe0e2;
 }
-.pat1{
-    height: 230px;
-width: 205px;
-    padding: 24px ;
-gap: 24px;
-margin-bottom: 30px;
-background: #FBFBFB;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 16px;
-
-}
-.profpic{
-    border-radius: 150px;
-    margin-left: 39.5px;
-}
-.pat1 .infos{
+.pat1 {
+    margin-top: 13px;
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-}
-.pat1 .infoflex{
+    height: 300px;
+    width: 250px;
+    padding: 20px;
+    background: #FBFBFB;
+    border-radius: 16px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .profpic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+
+  .infos {
+    text-align: center;
+  }
+
+  .nametxt {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .infoflex {
     display: flex;
-    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-    
-    padding: 4px;
-}
+    margin-top: 10px;
+  }
+
+  .infoflex img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+
+  .txt p {
+    margin: 0;
+  }
 .list{
 padding-top: 12px;
 padding-left: 30px;
@@ -359,3 +381,5 @@ display: none;
 .alert-dialog button:hover {
     background-color: #0056b3;
 }
+
+

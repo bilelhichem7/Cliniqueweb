@@ -126,10 +126,16 @@ room.addEventListener("click",function(){
           if (nom != null){
             let i = parseInt(nom); 
            for(let k = 1 ; k <=  i ; k ++ ){
+
+            
             set(ref(database, 'NumberofRoom/' + `/${k}` ), {
               status : true 
              } 
              );
+
+
+
+
            }
            } 
             console.log('Nom saisi :', nom);

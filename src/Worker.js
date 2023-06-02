@@ -2,13 +2,6 @@ import { initializeApp } from "firebase/app";
 import { getStorage, ref as storageRef , getDownloadURL, uploadBytes } from "firebase/storage";
 import { getDatabase, push, ref as databaseURL, set , onValue } from "firebase/database";
 import { getAuth,createUserWithEmailAndPassword ,signOut} from "firebase/auth";  
-const tabdoc = [];
-const tabnur = [];
-const tabphar = [];
-const tabrece = [];
-
-
-
 
 
 const firebaseConfig = {
@@ -21,6 +14,14 @@ const firebaseConfig = {
   appId: "1:452189960236:web:0bcef37210e2aeef62f989",
   measurementId: "G-8MCPP3RJLE"
 };
+
+
+const tabdoc = [];
+const tabnur = [];
+const tabphar = [];
+const tabrece = [];
+
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -119,6 +120,7 @@ addbtn.style.background='#F6F7FB';
 
  searchbtn.addEventListener("click",function(){
   const searchTerm = searchinp.value;  
+  console.log(tabdoc);
   if(searchTerm != "") {
     var table = '' ; 
     const results = tabdoc.filter((item) => item.nameuser.includes(searchTerm));
@@ -146,9 +148,7 @@ for (let k in codes){
 }
 document.getElementById('doclist').innerHTML = table ;
   }else {
-    setInterval(function() {
-      location.reload();
-    }, 100);
+   
   }
  });
 

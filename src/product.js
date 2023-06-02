@@ -1,8 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase, push, ref as databaseURL, set , onValue ,remove} from "firebase/database";
 import { getAuth,signOut } from "firebase/auth";  
-const codedata = [];
-const productdata = [];
+let codedata = [];
+let productdata = [] ; 
 
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -89,9 +89,6 @@ onValue(starCountRef, (snapshot) => {
   const data = snapshot.val();   
   var table = '' ; 
   for (let i  in data){
-    codedata.push( {code:data[i].MedCode}); 
-    productdata.push( {product:data[i].MedNameProduct}); 
-
       table += `
       <tr id="index${i}" >
       <td><input type="checkbox" id="check${i}" style="width: 35px;height: 35px;"></td>
@@ -129,13 +126,15 @@ delet.addEventListener("click", function() {
         medIdsToDelete.push(data[i].medid);
       }
     }
-  
     medIdsToDelete.forEach((medId) => {
       remove(databaseURL(database, `Medicament/${medId}`))
         .then(() => console.log(`Medication with ID ${medId} deleted successfully`))
         .catch((error) => console.error(`Error deleting medication with ID ${medId}: ${error}`));
     });
   });
+  setInterval(function() {
+    location.reload();
+  }, 100);
 });
 
 
@@ -183,6 +182,23 @@ selectous.addEventListener("click", function() {
 
 //...............................
 
+function Read_Med( codedata , productdata) {
+  const starCount = databaseURL(database,"Medicament/");
+  onValue(starCount, (snapshot) => {
+    const data = snapshot.val();  
+    for (let i  in data){
+    
+      codedata.push( {dd : data[i].MedCode}); 
+    
+      productdata.push( {pp : data[i].MedNameProduct}); 
+    
+    }
+  }) ; 
+
+}
+
+
+
 // la recherche dans ce cas ...............................
 const filtre = document.getElementById('filtre'); 
 
@@ -191,20 +207,28 @@ const searchbtn = document.getElementById('searchbtn');
 const searchinp = document.getElementById('searchinp'); 
 // Example array of objects
 
-searchbtn.addEventListener("click", function() {
- 
-const searchTerm = searchinp.value;  
-  if (searchTerm !== "" && filtre.value === "code") {
-  const results = codedata.filter((item) => item.code.includes(searchTerm));
-  const codes = results.map((item) => item.code );
-  var table = '' ; 
-for(let k in codes){
+
+searchbtn.addEventListener("click",function(){
+  codedata = [] ; 
+  productdata = [] ; 
   
-  onValue(starCountRef, (snapshot) => {
-    const data = snapshot.val();   
-    for (let i  in data){
-    if(data[i].MedCode == codes[k]) {
-      table += `
+Read_Med(codedata,productdata);
+console.log(codedata);
+const searchTerm = searchinp.value;  
+
+if (searchTerm != "" && filtre.value == "code") {
+
+  var table = '' ; 
+  const results = codedata.filter((item) => item.dd.toString().includes(searchTerm));
+  const codes = results.map((item) => item.dd);
+  for(let k in codes){
+    onValue(starCountRef, (snapshot) => {
+      const data = snapshot.val();   
+      for (let i  in data){
+      if(data[i].MedCode == codes[k]) {
+
+        if(table.includes(data[i].MedNameProduct)) {}
+        else{  table += `
         <tr id="index${i}" >
         <td><input type="checkbox" id="check${i}" style="width: 35px;height: 35px;"></td>
         <td>${data[i].MedCode}</td>
@@ -223,64 +247,69 @@ for(let k in codes){
      </div>      
     </td>    
     </tr>
-    `
-    }
+    `}
       
-    
-    }
-    
-  });
-};
-document.getElementById('tbody').innerHTML = table ;
-  } else if (searchTerm !== "" && filtre.value === "product") {
+      }
+        
+      
+      }}); }
+      console.log(table);
+      document.getElementById('tbody').innerHTML = table ;
 
-    // on utilise le nom de product 
-    const results = productdata.filter((item) => item.product.includes(searchTerm));
-    const codes = results.map((item) => item.product );
-    var table = '' ; 
+  
+    
+//////////////
+} else if(searchTerm != "" && filtre.value == "product"){
+
+  var table = '' ; 
+  const results = productdata.filter((item) => item.pp.toString().includes(searchTerm));
+  const codes = results.map((item) => item.pp);
   for(let k in codes){
-    console.log(codes[k]);
     onValue(starCountRef, (snapshot) => {
       const data = snapshot.val();   
       for (let i  in data){
       if(data[i].MedNameProduct == codes[k]) {
-        table += `
-          <tr id="index${i}" >
-          <td><input type="checkbox" id="check${i}" style="width: 35px;height: 35px;"></td>
-          <td>${data[i].MedCode}</td>
-          <td>${data[i].MedNameProduct} <br>
-          </td>
-             
-          <td>${data[i].MedQuantity}</td>
-          <td>${data[i].MedOrderNumber}</td>
-          <td>${data[i].MedBachNumber}</td>
-          <td>${data[i].MedExpirationDate} </td>
-          <td> 
-          <img src="/images/more-vertical.png" alt="" id="modf${i}" class="modf"  onclick="hide(${i})">
-         <div class="butns" id="butns${i}" style="display: none;" >
-         <button  id="delete${i}" >delete</button>
-         <button id="update${i}">update</button>
-       </div>      
-      </td>    
-      </tr>
-      `
-      }
-        
-      
-      }
-      
-    });
-  };
-  document.getElementById('tbody').innerHTML = table ;
-  } else {
-    setInterval(function() {
-      location.reload();
-    }, 100);
-  } ;
+        if(table.includes(data[i].MedCode)) {}
+        else{  table += `
+        <tr id="index${i}" >
+        <td><input type="checkbox" id="check${i}" style="width: 35px;height: 35px;"></td>
+        <td>${data[i].MedCode}</td>
+        <td>${data[i].MedNameProduct} <br>
+        </td>
+        <td>${data[i].MedQuantity}</td>
+        <td>${data[i].MedOrderNumber}</td>
+        <td>${data[i].MedBachNumber}</td>
+        <td>${data[i].MedExpirationDate} </td>
+        <td> 
+        <img src="/images/more-vertical.png" alt="" id="modf${i}" class="modf"  onclick="hide(${i})">
+       <div class="butns" id="butns${i}" style="display: none;" >
+       <button  id="delete${i}" >delete</button>
+       <button id="update${i}">update</button>
+     </div>      
+    </td>    
+    </tr>
+    `}
+      }  
+      }}); }
+      console.log(table);
+      document.getElementById('tbody').innerHTML = table ;
+
+
+
+} else{
+  setInterval(function() {
+    location.reload();
+  }, 100);
+}
+
 
 
 
 });
+
+
+
+
 //...............................................................
 
 
