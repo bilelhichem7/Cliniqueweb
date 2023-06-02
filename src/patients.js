@@ -185,8 +185,8 @@ addpatbtn.addEventListener("click", function() {
     const gender = parseInt(sex) ; 
     const now = new Date();
      const isoString = now.toISOString();
-     const imageRef = storageRef(storage, 'imagePat/'+photo.value+isoString  );
 
+     const imageRef = storageRef(storage, 'imagePat/'+photo.value+isoString  )
      uploadBytes(imageRef, photo.files[0])
      .then((snapshot) => {
       console.log("Image uploaded successfully!");
@@ -282,7 +282,7 @@ addpatbtn.addEventListener("click", function() {
     patslist.style.display = 'block';
     form.style.display = 'none';
 
-    const starCountRef = databaseURL(database,"FormPatient/");
+    const starCountRef = databaseURL(database,"Patients/");
     onValue(starCountRef, (snapshot) => {
       const data = snapshot.val();   
       var table = '' ; 
@@ -290,13 +290,13 @@ addpatbtn.addEventListener("click", function() {
         table += `
         <div class="pat1">
         <!--image part-->
-        <img src="${data[i].photo}" alt="" srcset="" class="profpic">
+        <img src="${data[i].patPicUrl}" alt="" srcset="" class="profpic">
         <!--informations part-->
         <div class="infos">
-            <span class="nametxt">${data[i].PatientFullName}</span>
+            <span class="nametxt">${data[i].fullName}</span>
             <div class="infoflex">
                 <img src="/images/id-card (1) 1.png" alt="">
-                <div class="txt"><p>${data[i].RoomNumber}</p><br>
+                <div class="txt"><p>${data[i].roomNum}</p><br>
                    <p> 09948394</p></div>
                 <img src="/images/check (1) 1.png" alt="">
             </div>
@@ -328,3 +328,22 @@ signout.addEventListener("click",function(){
 
 })
 
+
+
+
+
+
+
+
+const cliniquename = document.querySelector("#cliniquename"); 
+const starCoun = databaseURL(database,'cliniquename');
+onValue(starCoun, (snapshot) => {
+  const data = snapshot.val();
+  if(data != ""){
+  cliniquename.innerHTML = data.nom ;}
+});
+
+
+cliniquename.addEventListener("click",function(){
+  window.location = "index.html";
+})
