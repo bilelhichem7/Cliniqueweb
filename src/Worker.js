@@ -20,6 +20,56 @@ const tabdoc = [];
 const tabnur = [];
 const tabphar = [];
 const tabrece = [];
+const wilayasAlger = [
+  "Adrar",
+  "Chlef",
+  "Laghouat",
+  "Oum El Bouaghi",
+  "Batna",
+  "Béjaïa",
+  "Biskra",
+  "Béchar",
+  "Blida",
+  "Bouira",
+  "Tamanrasset",
+  "Tébessa",
+  "Tlemcen",
+  "Tiaret",
+  "Tizi Ouzou",
+  "Alger",
+  "Djelfa",
+  "Jijel",
+  "Sétif",
+  "Saïda",
+  "Skikda",
+  "Sidi Bel Abbès",
+  "Annaba",
+  "Guelma",
+  "Constantine",
+  "Médéa",
+  "Mostaganem",
+  "M'Sila",
+  "Mascara",
+  "Ouargla",
+  "Oran",
+  "El Bayadh",
+  "Illizi",
+  "Bordj Bou Arreridj",
+  "Boumerdès",
+  "El Tarf",
+  "Tindouf",
+  "Tissemsilt",
+  "El Oued",
+  "Khenchela",
+  "Souk Ahras",
+  "Tipaza",
+  "Mila",
+  "Aïn Defla",
+  "Naâma",
+  "Aïn Témouchent",
+  "Ghardaïa",
+  "Relizane"
+];
 
 
 
@@ -30,7 +80,19 @@ const database = getDatabase(app);
 const auth = getAuth(app);
 
 
+const spec = document.querySelector(".Speciality");
+spec.style.display = "none";
+const job = document.querySelector("#job");
 
+ job.addEventListener("click",function(){
+  if(job.value == "doctor"){
+    spec.style.display = "block";
+  } else {
+    spec.style.display = "none";
+  }
+  
+
+ })
 
 
 const cliniquename = document.querySelector("#cliniquename"); 
@@ -78,6 +140,7 @@ const searchinp = document.getElementById('search');
 
 //show doctors list
 function showdoc(){
+  document.getElementById('searchBar').style.display='block';
   docbtn.style.background='#FFFFFF';
     doclist.style.display = 'flex';
     doclist.style.justifyContent = 'center';
@@ -123,7 +186,7 @@ addbtn.style.background='#F6F7FB';
   console.log(tabdoc);
   if(searchTerm != "") {
     var table = '' ; 
-    const results = tabdoc.filter((item) => item.nameuser.includes(searchTerm));
+    const results = tabdoc.filter((item) => item.nameuser.toString().toLowerCase().includes(searchTerm.toString().toLowerCase()));
   const codes = results.map((item) => item.nameuser ); 
 for (let k in codes){
   onValue(starCountRef, (snapshot) => {
@@ -131,15 +194,18 @@ for (let k in codes){
     for (let i  in data){
       if(data[i].UserJob == "doctor"){
         if (data[i].UserName == codes[k]){
-          table += `
-          <div class="doc1" id="doc1">
-          <img src=${data[i].UserImage} alt="">
-          <div class="infos">
-              <h4>${data[i].UserName}</span><p>${data[i].UserEmail}</p> <p>${data[i].UserPhoneNumber}</p>
-                 <p> ${data[i].spec}</p>
-          </div>
-      </div>
-      `
+          if(!table.includes(data[i].UserName)){
+            table += `
+            <div class="doc1" id="doc1">
+            <img src=${data[i].UserImage} alt="">
+            <div class="infos">
+                <h4>${data[i].UserName}</span><p>${data[i].UserEmail}</p> <p>${data[i].UserPhoneNumber}</p>
+                   <p> ${data[i].spec}</p>
+            </div>
+        </div>
+        `
+          }
+        
         }
       }
     }
@@ -157,7 +223,7 @@ document.getElementById('doclist').innerHTML = table ;
 }
 //show nurses list
 function shownur(){
-   
+  document.getElementById('searchBar').style.display='block';
         nurbtn.style.background='#FFFFFF';
         nurslist.style.display='flex';
         nurslist.style.justifyContent = 'center';
@@ -198,7 +264,7 @@ function shownur(){
         const searchTerm = searchinp.value;  
         if(searchTerm != "") {
           var table = '' ; 
-          const results = tabnur.filter((item) => item.inf.includes(searchTerm));
+          const results = tabnur.filter((item) => item.inf.toString().toLowerCase().includes(searchTerm.toString().toLowerCase()));
         const codes = results.map((item) => item.inf ); 
       for (let k in codes){
         onValue(starCountRef, (snapshot) => {
@@ -206,15 +272,18 @@ function shownur(){
           for (let i  in data){
             if(data[i].UserJob == "nurses"){
               if (data[i].UserName == codes[k]){
-                table += `
-                <div class="doc1" id="doc1">
-                <img src=${data[i].UserImage} alt="">
-                <div class="infos">
-                    <h4>${data[i].UserName}</span><p>${data[i].UserEmail}</p> <p>${data[i].UserPhoneNumber}</p>
-                       <p> ${data[i].spec}</p>
-                </div>
-            </div>
-            `
+                if(!table.includes(data[i].UserName)){
+                  table += `
+                  <div class="doc1" id="doc1">
+                  <img src=${data[i].UserImage} alt="">
+                  <div class="infos">
+                      <h4>${data[i].UserName}</span><p>${data[i].UserEmail}</p> <p>${data[i].UserPhoneNumber}</p>
+                         <p> ${data[i].spec}</p>
+                  </div>
+              </div>
+              `
+                }
+               
               }
             }
           }
@@ -232,6 +301,7 @@ function shownur(){
 }
 //show pharmasist list
  function showphar(){
+  document.getElementById('searchBar').style.display='block';
     pharmbtn.style.background='#FFFFFF';
     pharmlist.style.display='flex';
     pharmlist.style.justifyContent = 'center';
@@ -271,7 +341,7 @@ searchbtn.addEventListener("click",function(){
   const searchTerm = searchinp.value;  
   if(searchTerm != "") {
     var table = '' ; 
-    const results = tabphar.filter((item) => item.phr.includes(searchTerm));
+    const results = tabphar.filter((item) => item.phr.toString().toLowerCase().includes(searchTerm.toString().toLowerCase()));
   const codes = results.map((item) => item.phr ); 
 for (let k in codes){
   onValue(starCountRef, (snapshot) => {
@@ -279,15 +349,18 @@ for (let k in codes){
     for (let i  in data){
       if(data[i].UserJob == "pharmacies"){
         if (data[i].UserName == codes[k]){
-          table += `
-          <div class="doc1" id="doc1">
-          <img src=${data[i].UserImage} alt="">
-          <div class="infos">
-              <h4>${data[i].UserName}</span><p>${data[i].UserEmail}</p> <p>${data[i].UserPhoneNumber}</p>
-                 <p> ${data[i].spec}</p>
-          </div>
-      </div>
-      `
+          if(!table.includes(data[i].UserName)){
+            table += `
+            <div class="doc1" id="doc1">
+            <img src=${data[i].UserImage} alt="">
+            <div class="infos">
+                <h4>${data[i].UserName}</span><p>${data[i].UserEmail}</p> <p>${data[i].UserPhoneNumber}</p>
+                   <p> ${data[i].spec}</p>
+            </div>
+        </div>
+        `
+          }
+        
         }
       }
     }
@@ -309,6 +382,7 @@ document.getElementById('pharmlist').innerHTML = table ;
 
 //show receptionist list
  function showrecep(){
+  document.getElementById('searchBar').style.display='block';
     recepbtn.style.background='#FFFFFF';
     receplist.style.display='flex';
     receplist.style.justifyContent = 'center';
@@ -348,7 +422,7 @@ receplist.style.alignItems = 'center';
     const searchTerm = searchinp.value;  
     if(searchTerm != "") {
       var table = '' ; 
-      const results = tabrece.filter((item) => item.rec.includes(searchTerm));
+      const results = tabrece.filter((item) => item.rec.toString().toLowerCase().includes(searchTerm.toString().toLowerCase()));
     const codes = results.map((item) => item.rec ); 
   for (let k in codes){
     onValue(starCountRef, (snapshot) => {
@@ -356,15 +430,18 @@ receplist.style.alignItems = 'center';
       for (let i  in data){
         if(data[i].UserJob == "Receptioniste"){
           if (data[i].UserName == codes[k]){
-            table += `
-            <div class="doc1" id="doc1">
-            <img src=${data[i].UserImage} alt="">
-            <div class="infos">
-                <h4>${data[i].UserName}</span><p>${data[i].UserEmail}</p> <p>${data[i].UserPhoneNumber}</p>
-                   <p> ${data[i].spec}</p>
-            </div>
-        </div>
-        `
+            if(!table.includes(data[i].UserName)){
+              table += `
+              <div class="doc1" id="doc1">
+              <img src=${data[i].UserImage} alt="">
+              <div class="infos">
+                  <h4>${data[i].UserName}</span><p>${data[i].UserEmail}</p> <p>${data[i].UserPhoneNumber}</p>
+                     <p> ${data[i].spec}</p>
+              </div>
+          </div>
+          `
+            }
+            
           }
         }
       }
@@ -382,6 +459,17 @@ receplist.style.alignItems = 'center';
  }
 //add workers
   function addwork(){
+    const cityyy = document.querySelector("#city");
+
+    for (let i = 0; i < wilayasAlger.length; i++) {
+      const option = document.createElement('option');
+      option.value = `${wilayasAlger[i]}`;
+      option.text = `${wilayasAlger[i]}`;
+      cityyy.add(option);
+      
+    }
+
+
     //display form page
     addbtn.style.background='#FFFFFF';
     AddForm.style.display='block';//change after style
@@ -546,6 +634,11 @@ uploadBytes(imageRef, photo.files[0])
  console.error("Error uploading image: ", error);
 });}
 });
+
+
+
+
+// initialize de wilaya algerrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr--------------------------------
 
 
 

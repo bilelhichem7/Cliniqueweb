@@ -123,10 +123,7 @@ addpatbtn.addEventListener("click", function() {
           }
       };
     });
-
-
     const cityyy = document.querySelector("#city");
-
     for (let i = 0; i < wilayasAlger.length; i++) {
       const option = document.createElement('option');
       option.value = `${wilayasAlger[i]}`;
@@ -134,21 +131,7 @@ addpatbtn.addEventListener("click", function() {
       cityyy.add(option);
       
     }
-    
-
-
-
-
    const save = document.querySelector("#save");
-
-
-
-
-
-
-
-
-
    save.addEventListener("click",function(){
    const photo = document.querySelector("#photo");
    const Name = document.querySelector("#Name").value;
@@ -242,20 +225,6 @@ addpatbtn.addEventListener("click", function() {
       console.error("Error uploading image: ", error);
      });
      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
      ////////////////////////////////////
    }
 
@@ -276,41 +245,73 @@ addpatbtn.addEventListener("click", function() {
  
  
  //------------------------------------------------------ ON VALUE  PATIENT ------------------------------
-    patbtn.addEventListener("click", function() {
+   
+ 
+ patbtn.addEventListener("click", function() {
+  
     patbtn.style.background = '#FFFFFF';
     addpatbtn.style.background = 'none'
     patslist.style.display = 'block';
     form.style.display = 'none';
-
     const starCountRef = databaseURL(database,"Patients/");
     onValue(starCountRef, (snapshot) => {
       const data = snapshot.val();   
       var table = '' ; 
       for (let i  in data){
         table += `
-        <div class="pat1">
+        <div class="pat1"  >
         <!--image part-->
         <img src="${data[i].patPicUrl}" alt="" srcset="" class="profpic">
         <!--informations part-->
         <div class="infos">
             <span class="nametxt">${data[i].fullName}</span>
             <div class="infoflex">
-                <img src="/images/id-card (1) 1.png" alt="">
+                <img    class="FetchInfo${i}"  src="/images/id-card (1) 1.png" alt=""   >
                 <div class="txt"><p>${data[i].roomNum}</p><br>
-                   <p> 09948394</p></div>
+                   <p> ${data[i].dtOfBirth}</p></div>
                 <img src="/images/check (1) 1.png" alt="">
             </div>
 
         </div>
     </div>
         `;
+      
       }
+   
     
       document.getElementById('patientlist').innerHTML = table ;
     });
-    
-
-    });
+   
+  
+  
+  
+  
+  //une autre activity
+  const st = databaseURL(database,"Patients/");
+  onValue(st, (snapshot) => {
+    const data = snapshot.val(); 
+   
+    for(let i in data){
+      const fetchInfoImg = document.getElementsByClassName(`FetchInfo${i}`);
+      fetchInfoImg[0].addEventListener("click",function(){
+        addpatbtn.style.background = '#FFFFFF';
+    patbtn.style.background = 'none';
+    form.style.display = 'block';
+    patslist.style.display = 'none';
+    const photo = document.querySelector("#photo").value ;
+    const Name = document.querySelector("#Name").value = data[i].fullName ;
+    const adr = document.querySelector("#adr").value  ;
+    const secNumb = document.querySelector("#secNumb").value ;
+    const phonenum = document.querySelector("#phonenum").value ;
+    const date = document.querySelector("#date").value = data[i].dtOfBirth;
+    const patStat = document.querySelector("#patStat").value = data[i].state ;
+    const city = document.querySelector("#city").value ;
+    const sex = document.querySelector("#sex").value =data[i].gender;
+    const status = document.querySelector("#status").value ;
+    const roomNum = document.querySelector("#roomNum").value = data[i].roomNum;
+      }) ; 
+    }
+  })});
 
 
 
@@ -347,3 +348,89 @@ onValue(starCoun, (snapshot) => {
 cliniquename.addEventListener("click",function(){
   window.location = "index.html";
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// la recherche sur patient ////////////////////////////////////////////////
+let codedata = [] ; 
+function Read_Med( codedata ) {
+  const starCount = databaseURL(database,"Patients/");
+  onValue(starCount, (snapshot) => {
+    const data = snapshot.val();  
+    for (let i  in data){
+      codedata.push( {dd : data[i].fullName}); 
+    }
+  }) ; 
+
+}
+
+
+const searchbtn = document.getElementById('searchBtn'); 
+
+const searchinp = document.getElementById('search'); 
+
+
+searchbtn.addEventListener("click",function(){
+  codedata = [] ; 
+  const star = databaseURL(database,"Patients/");
+Read_Med(codedata);
+const searchTerm = searchinp.value;  
+
+if(searchTerm != "") {
+  var table = '' ; 
+  const results = codedata.filter((item) => item.dd.toString().toLowerCase().includes(searchTerm.toLowerCase()));
+  const codes = results.map((item) => item.dd);
+
+  for(let k in codes){
+    onValue(star, (snapshot) => {
+      const data = snapshot.val();  
+      for (let i  in data){
+       if(data[i].fullName == codes[k] && !table.includes(data[i].fullName)) {
+        table += `
+        <div class="pat1">
+        <!--image part-->
+        <img src="${data[i].patPicUrl}" alt="" srcset="" class="profpic">
+        <!--informations part-->
+        <div class="infos">
+            <span class="nametxt">${data[i].fullName}</span>
+            <div class="infoflex">
+                <img src="/images/id-card (1) 1.png" alt=""  if="FetchInfo" >
+                <div class="txt"><p>${data[i].roomNum}</p><br>
+                   <p> ${data[i].dtOfBirth}</p></div>
+                <img src="/images/check (1) 1.png" alt="">
+            </div>
+
+        </div>
+    </div>
+        `;
+       }
+      }
+    }) ; 
+  }
+
+  document.getElementById('patientlist').innerHTML = table ;
+//
+}});
+
+
+
+// fin de la recherche /////////////////////////////////////////////////////////
+
+// fetch info ///////////////////////
+
+
+
+
+
+    
