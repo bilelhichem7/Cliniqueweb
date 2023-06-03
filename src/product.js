@@ -70,7 +70,7 @@ add.addEventListener("click",function(){
       set(newRecordRef, newData) ;
       setInterval(function() {
         location.reload();
-      }, 500);
+      }, 300);
       code.value = "" ; 
       productt.value = "" ; 
       quantity.value = "" ; 
@@ -134,7 +134,7 @@ delet.addEventListener("click", function() {
   });
   setInterval(function() {
     location.reload();
-  }, 100);
+  }, 90);
 });
 
 
@@ -253,6 +253,8 @@ if (searchTerm != "" && filtre.value == "code") {
         
       
       }}); }
+
+      
       console.log(table);
       document.getElementById('tbody').innerHTML = table ;
 
