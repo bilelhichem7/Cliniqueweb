@@ -260,8 +260,8 @@ border-radius: 4px;
   }
 
   .profpic {
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
@@ -272,7 +272,7 @@ border-radius: 4px;
   }
 
   .nametxt {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
   }
@@ -287,7 +287,7 @@ border-radius: 4px;
   .infoflex img {
     width: 20px;
     height: 20px;
-    margin-right: 10px;
+    margin-right:10px;
   }
 
   .txt p {

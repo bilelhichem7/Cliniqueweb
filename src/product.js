@@ -70,7 +70,7 @@ add.addEventListener("click",function(){
       set(newRecordRef, newData) ;
       setInterval(function() {
         location.reload();
-      }, 300);
+      }, 100);
       code.value = "" ; 
       productt.value = "" ; 
       quantity.value = "" ; 

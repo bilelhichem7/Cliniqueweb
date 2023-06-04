@@ -7,6 +7,7 @@
     font-family:'Rubik',sans-serif;
 }
 
+<<<<<<< HEAD
 
 .drower{
  
@@ -18,6 +19,8 @@
  margin: 20px;
 
 }
+=======
+>>>>>>> 829a1fbc36a92efbb58af4c17c174a341ddbb378
 .material-symbols-outlined {
   font-variation-settings:
   'FILL' 0,
@@ -380,7 +383,11 @@ margin: 33px 291px;
       transform: rotate(360deg);
     }
   }
+<<<<<<< HEAD
   
+=======
+  @media screen and (max-width: 576px){}
+>>>>>>> 829a1fbc36a92efbb58af4c17c174a341ddbb378
   .main-title {
     display: flex;
     justify-content: space-between;
@@ -446,7 +453,10 @@ margin: 33px 291px;
     -webkit-column-break-inside: avoid;
     border-radius: 5px;
     box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+<<<<<<< HEAD
     
+=======
+>>>>>>> 829a1fbc36a92efbb58af4c17c174a341ddbb378
   }
   
   .chart-title {
@@ -456,6 +466,7 @@ margin: 33px 291px;
   }
   
   .dashb{
+<<<<<<< HEAD
     margin: 10px;
     display: none;
   }
@@ -530,3 +541,8 @@ margin: 33px 291px;
     }
       }
       
+=======
+    margin: 50px;
+    display:none;
+  }
+>>>>>>> 829a1fbc36a92efbb58af4c17c174a341ddbb378

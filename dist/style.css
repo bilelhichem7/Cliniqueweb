@@ -22,11 +22,23 @@ section{
 body{
     background-image: url(/images/Removal-6261.png);
     background-repeat: no-repeat;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 829a1fbc36a92efbb58af4c17c174a341ddbb378
     background-size: 1500px 730px;
 
 background-position-x: right;   
     background-position-y:top;
     
+<<<<<<< HEAD
+=======
+=======
+    background-size: 1666px 1000px;
+    background-position-x: -0px;
+    background-position-y: -170px;
+>>>>>>> 0b0b9484ffd1b596ca23f9204bedb4441b31696f
+>>>>>>> 829a1fbc36a92efbb58af4c17c174a341ddbb378
    
 }
 .menu-icon{
