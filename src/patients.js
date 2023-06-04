@@ -2,6 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getStorage, ref as storageRef , getDownloadURL, uploadBytes } from "firebase/storage";
 import { getDatabase, push, ref as databaseURL, set , onValue } from "firebase/database";
 import { getAuth,createUserWithEmailAndPassword ,signOut} from "firebase/auth";  
+import { Integer } from "read-excel-file";
 
 
 const firebaseConfig = {
@@ -104,8 +105,6 @@ addpatbtn.addEventListener("click", function() {
     form.style.display = 'block';
     patslist.style.display = 'none';
    
-    
-
     const roomNume = document.querySelector("#roomNum");
 
     const starCountReff = databaseURL(database,"NumberofRoom");
@@ -144,6 +143,7 @@ addpatbtn.addEventListener("click", function() {
    const sex = document.querySelector("#sex").value;
    const status = document.querySelector("#status").value;
    const roomNum = document.querySelector("#roomNum").value;
+   var  incorrectPrefix = phonenum.substring(0,2);
 
    if(photo.value == "" || Name == "" || adr == "" || secNumb == "" || phonenum == "" || date == "" || patStat == "" || city == "" || sex == ""
     || status == "" || roomNum == ""
@@ -163,6 +163,8 @@ addpatbtn.addEventListener("click", function() {
     dialog.appendChild(message);
     dialog.appendChild(closeButton);
     document.body.appendChild(dialog);
+   } if(!incorrectPrefix == "05" || !incorrectPrefix == "07" || !incorrectPrefix == "06"){
+                alert("The telephone number starts with the incorrect digit '" +" "+ incorrectPrefix + " ");  
    } else {
     const db = databaseURL(database,"FormPatient/");
     const gender = parseInt(sex) ; 
@@ -215,14 +217,17 @@ addpatbtn.addEventListener("click", function() {
           .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
+            alert(errorMessage);
             // ..
           });
        
         })
         .catch((error) => {
           console.error("Error getting download URL: ", error);
+          alert(error);
         }).catch((error) => {
       console.error("Error uploading image: ", error);
+      alert(error);
      });
      
      ////////////////////////////////////
@@ -268,8 +273,7 @@ addpatbtn.addEventListener("click", function() {
             <div class="infoflex">
                 <img    class="FetchInfo${i}"  src="/images/id-card (1) 1.png" alt=""   >
                 <div class="txt"><p>${data[i].roomNum}</p><br>
-                   <p> ${data[i].dtOfBirth}</p></div>
-                <img src="/images/check (1) 1.png" alt="">
+                   <p> ${data[i].patientPhoneNumber}</p></div>
             </div>
 
         </div>
@@ -298,17 +302,26 @@ addpatbtn.addEventListener("click", function() {
     patbtn.style.background = 'none';
     form.style.display = 'block';
     patslist.style.display = 'none';
-    const photo = document.querySelector("#photo").value ;
-    const Name = document.querySelector("#Name").value = data[i].fullName ;
-    const adr = document.querySelector("#adr").value  ;
-    const secNumb = document.querySelector("#secNumb").value ;
-    const phonenum = document.querySelector("#phonenum").value ;
+    // hena ndiro apres ma hmed yrigel l class dyalo
+    const photo = document.querySelector("#photo");
+    const Name = document.querySelector("#Name").value = data[i].fullName;
+    const adr = document.querySelector("#adr").value   ;
+    const secNumb = document.querySelector("#secNumb").value =  data[i].patientSecurityNumber;
+    const phonenum = document.querySelector("#phonenum").value = data[i].patientPhoneNumber    ;
     const date = document.querySelector("#date").value = data[i].dtOfBirth;
-    const patStat = document.querySelector("#patStat").value = data[i].state ;
-    const city = document.querySelector("#city").value ;
-    const sex = document.querySelector("#sex").value =data[i].gender;
-    const status = document.querySelector("#status").value ;
-    const roomNum = document.querySelector("#roomNum").value = data[i].roomNum;
+    const patStat = document.querySelector("#patStat").value = data[i].chrDis;
+    const sex = document.querySelector("#sex").value = data[i].state;
+    const status = document.querySelector("#status").value = data[i].patientCivilStatus ;
+    const option = document.createElement('option');
+    option.value = data[i].roomNum;
+    option.text = data[i].roomNum;
+    const roomNum = document.querySelector("#roomNum"); 
+    roomNum.add(option);
+    const option1 = document.createElement('option');
+    option1.value = data[i].patientCity;
+    option1.text = data[i].patientCity;
+    const city = document.querySelector("#city") ; 
+    city.add(option1);
       }) ; 
     }
   })});
@@ -407,8 +420,7 @@ if(searchTerm != "") {
             <div class="infoflex">
                 <img src="/images/id-card (1) 1.png" alt=""  if="FetchInfo" >
                 <div class="txt"><p>${data[i].roomNum}</p><br>
-                   <p> ${data[i].dtOfBirth}</p></div>
-                <img src="/images/check (1) 1.png" alt="">
+                   <p> ${data[i].patientPhoneNumber}</p></div>
             </div>
 
         </div>
