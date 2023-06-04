@@ -8,11 +8,11 @@
 }
 body{
     
-    background-image: url(/images/pose_1.png);
+    background-image: url(/images/undraw_Folder_re_apfp\ 1.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 674px ;
-    background-position: 650px 0px ;   
+    background-position: 650px 200px ;   
    
 }
 .navbar{
@@ -45,7 +45,7 @@ body{
     
     display: flex;   
     height: 41px;     
-    margin-right: 140px;
+    margin-right: -80px;
     margin-top: 40px;
 }
 .info a{  
@@ -145,7 +145,9 @@ button:hover{
     animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
     border-color: #fff transparent transparent transparent;
   }
-  
+  .material-symbols-outlined{
+    display: none;
+  }
   .lds-ring div:nth-child(1) {
     animation-delay: -0.45s;
   }
@@ -164,6 +166,52 @@ button:hover{
     }
     100% {
       transform: rotate(360deg);
+    }
+  }
+  @media screen and (max-width: 576px){
+    body{
+      background-image: none;
+    }
+    .info{
+      display: none;
+      
+    }
+    .flex{
+      margin-left: -45px;
+    }
+    #forget{
+      margin-left: 50px;
+    }
+    input{
+      width: 300px;
+      margin-left: -25px;
+     
+    }
+    button{
+      width: 300px;
+      margin-left: -70px;
+    }
+    .text{
+      margin-left: -35px;
+    }
+    .text span{
+      font-size: 2.2rem;
+      
+    }
+    .logo{
+      margin-left: -20px;
+    }
+    .logo img{
+      size: 5px 5px;
+    }
+    .logo span{
+      font-size:1.7rem;
+    }
+    .material-symbols-outlined{
+      display: block;
+      margin-top: 40px;
+
+      margin-right: 15px;
     }
   }
   

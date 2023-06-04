@@ -20,27 +20,25 @@ section{
    
 }
 body{
-    background-image: url(/images/Removal-626.png);
+    background-image: url(/images/Removal-6261.png);
     background-repeat: no-repeat;
-    background-size: 1666px 1000px;
+    background-size: 1500px 730px;
 
-background-position-x: -0px;
-    
-    background-position-y: -170px;
+background-position-x: right;   
+    background-position-y:top;
     
    
 }
-.header{
-    
+.menu-icon{
+    display: none;
+}
+.header{  
     width: 100%; 
-    right: 0;
-     
+    right: 0;    
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 11px 51px 0px;
-    
-   
+    padding: 11px 51px 0px;  
 }
 .logo{
   display: flex;
@@ -69,7 +67,7 @@ background-position-x: -0px;
     position: relative;
     display: flex;  
     height: 90px;
-    margin-right: -18%;
+   margin-right: 4%;
  
     
 }
@@ -176,12 +174,12 @@ margin-left: 5px;
   border-radius: 10px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  
+  justify-content: space-around; 
   margin-bottom: 32px;
 }
 .cads .btn2{
-    margin-right: 110px;
+    margin-right: 70px;
+    margin-left: -30px;
 }
 .btn1{
     margin-left: 30px;
@@ -232,6 +230,7 @@ hr{
     .navbar{
         margin-left: 10%;
     }
+    
     .buttn{
         width: 68%;
      }
@@ -240,8 +239,7 @@ hr{
 }
 @media (min-height:750px) {
     body{
-        background-position-y: -140px;
-        background-size: 1666px 1100px;
+        background-size: 1550px 830px;  
     }
     .text{
        
@@ -348,10 +346,8 @@ color: #545454;
 }
 .app .dwmld{
     font-weight: 600;
-    font-size: 2rem;
-    line-height: 177.9%;
-    text-align: center;
-    letter-spacing: 0.01em;   
+    font-size: 2rem;  
+    text-align: center;     
     color: #000000;
     
 }
@@ -390,9 +386,75 @@ color: #000000;
 #applink{
     cursor: pointer;
 }
+.menu-icon {
+   
+  }
+  
+  
+  /* ---------- SIDEBAR ---------- */
+  /*
+  #sidebar {
+    grid-area: sidebar;
+    height: 100%;
+    background-color: #263043;
+    overflow-y: auto;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+  }
+  
+  .sidebar-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 30px 30px 30px;
+    margin-bottom: 30px;
+  }
+  
+  .sidebar-title > span {
+    display: none;
+  }
+  
+  .sidebar-brand {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  
+  .sidebar-list {
+    padding: 0;
+    margin-top: 15px;
+    list-style-type: none;
+  }
+  
+  .sidebar-list-item {
+    padding: 20px 20px 20px 20px;
+    font-size: 18px;
+  }
+  
+  .sidebar-list-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+  }
+  
+  .sidebar-list-item > a {
+    text-decoration: none;
+    color: #9e9ea4;
+  }
+  
+  .sidebar-responsive {
+    display: inline !important;
+    position: absolute;
+    /*
+      the z-index of the ApexCharts is 11
+      we want the z-index of the sidebar higher so that
+      the charts are not showing over the sidebar 
+      on small screens
+    */
+  /*  z-index: 12 !important;
+  }*/
 
 
-
+  
 
 
 
@@ -440,3 +502,156 @@ color: #000000;
 }
 
 
+/*the min*/
+@media screen and (max-width: 576px){
+body {
+    width: 100%;
+    background-size: 800px 700px ;
+    background-position-y: 50px;
+    background-position-x: -330px;
+}
+.logo img{
+    width: 40px;
+    height: 40px;
+}
+.logo span{
+    font-size: 2rem;
+}
+.home{
+    width: 400px;
+}
+.text{
+    width: 350px;
+margin-left: -26px;
+margin-top: -55px;
+}
+.text h1{
+   font-size: 2.1rem;
+}
+.text p{
+    width: 270px;
+    margin-left: -1px;
+    
+}
+.navbar{
+    display: none;
+}
+.header{
+    margin-left: -40px;
+}
+.btn1{
+    margin-left: -1px;
+}
+.buttn{
+    margin-left: -120px;
+    width: 400px;
+    flex-direction: column;
+}
+button{
+    font-size: 0.8rem;
+    
+    
+}
+.btns{
+    
+    height:170px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+  .cads{
+    margin-left: 50px;
+    margin-top: -20px;
+    
+  }
+  .btn2{
+    margin-top: -20px;
+  }
+  .bar {
+    width: 300px;
+    height: 70px;
+    margin-top: 0px;
+    margin-left: -50px;
+    
+  } 
+  .bar span{
+    font-size: 1rem;
+    font-weight: 200px;
+  }
+  .cards{
+    flex-direction: column;
+  }
+  .card1, .card2, .card3{
+    width: 340px;
+  }
+  .app{
+    display: block;
+
+  }
+  .link{
+    margin-left: -10px;
+  }
+  .link a{
+    font-size: 1.5rem;
+   
+  }
+  .app .dwmld{
+    
+    font-size: 1.5rem;
+    
+  }
+  .social{
+    margin-left: -70px;
+  }
+  .media{
+    margin-top: 15px;
+    margin-left: 200px;
+  }
+  .media img{
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.text{
+    width: 450px;
+}
+
+
+/* Medium <= 992px */
+/*
+@media screen and (max-width: 992px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.2fr 3fr;
+      grid-template-areas:
+        "header"
+        "main";
+    }
+    .menu-icon{
+        
+    }
+    .header{
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}*/
+    /*#sidebar {
+      display: none;
+    }
+  
+    .menu-icon {
+      display: inline;
+    }
+  
+    .sidebar-title > span {
+      display: inline;
+    }
+  }
+
+
+
+
+*/

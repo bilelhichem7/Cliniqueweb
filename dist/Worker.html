@@ -5,13 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Worker</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="Worker.css">
 </head>
 <body>
 <!--the page content-->
 <div class="container">
     <!--the derower-->
-    <div class="drower">
+    <span class="material-symbols-outlined" id="material-symbols-outlined1" onclick="actived()">
+        menu
+        </span>
+    <div class="drower" id="drower">
        <!--the logo----->
        <div class="logo">
           <a href="#"> <img src="/images/Rectangle 51.png"><span  id="cliniquename">Clinic Name</span></a>
@@ -37,6 +41,12 @@
             <button id="workers"  >
                 <img src="/images/Group 1000004355.png" > 
                 Add a workers
+            </button>
+            <button id="Dashboard" onclick="showdassh()" >
+                <span class="material-symbols-outlined">
+                    bar_chart_4_bars
+                    </span> 
+                Dashboard
             </button>
         </div>
         <div class="logOut">
@@ -121,6 +131,15 @@
 
             </select>
            </div>
+           <div class="status">
+            <h5>Civil status</h5>
+            <select name="status" id="status">
+                <option value="choose"></option>
+                <option value="Maried">Maried</option>
+                <option value="Célibataire">Célibataire</option>
+                <option value="Divorcé">Divorcé</option>
+            </select>
+         </div>
            <!--speciality-->
            <div class="Speciality">
             <h5>Speciality</h5>
@@ -194,37 +213,90 @@
                 </div>
 
             </div>
-            <div class="sf3">
-                <!--status-->
-              <div class="status">
-                <h5>Civil status</h5>
-                <select name="status" id="status">
-                    <option value="choose"></option>
-                    <option value="Maried">Maried</option>
-                    <option value="Célibataire">Célibataire</option>
-                    <option value="Divorcé">Divorcé</option>
-                </select>
-             </div>
-             <!--job-->
-        
-
-            </div>
-
-        </div>
-        <!--flex5-->
-        <div class="flex5">
-            <!--address-->
             <div class="adrss">
                 <h5>Address</h5>
          <input type="text" placeholder="Address" id="adr">
         </div>
 
         </div>
+        <!--flex5-->
+        <div class="flex5">
+            <!--address-->
+           
+
+        </div>
     </div>
         <button id="save"> Save</button>
      </div>
+     <!--dashboard-->
+     <div class="dashb" id="dashb">
+        <div class="main-title">
+            <h2>DASHBOARD</h2>
+          </div>
+          
+        <div class="main-cards">
+
+            <div class="card">
+              <div class="card-inner">
+                <h3>DOCTORS</h3>
+                <span class="material-symbols-outlined">
+                    stethoscope
+                    </span>
+              </div>
+              <h1>15</h1>
+            </div>
+  
+            <div class="card">
+              <div class="card-inner">
+                <h3>Nurses</h3>
+                <span class="material-symbols-outlined">
+                    medication
+                    </span>
+               
+              </div>
+              <h1>20</h1>
+            </div>
+  
+            <div class="card">
+              <div class="card-inner">
+                <h3>PHARMACIES</h3>
+                <span class="material-symbols-outlined">
+                    pill
+                    </span>
+                
+              </div>
+              <h1>5</h1>
+            </div>
+  
+            <div class="card">
+              <div class="card-inner">
+                <h3>RECEPTIONISTS</h3>
+                <span class="material-symbols-outlined">
+                    edit_note
+                    </span>
+              </div>
+              <h1>3</h1>
+            </div>
+  
+          </div>
+
+          <div class="charts">
+
+            <div class="charts-card">
+              <h2 class="chart-title">number of workers</h2>
+              <div id="bar-chart"></div>
+            </div>
+           
+           
+  
+          </div>
+          
+     </div>
     </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
+<script src="add.js"></script>
+
 
  <script src="Worker.bundle.js"></script> 
 </body>

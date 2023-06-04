@@ -8,11 +8,11 @@
 }
 body{
     
-    background-image: url(/images/pose_1.png);
+    background-image: url(/images/undraw_data_processing_yrrv\ 1.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 674px ;
-    background-position: 650px 0px ;   
+    background-position: 650px 150px ;   
    
 }
 .navbar{
@@ -45,7 +45,7 @@ body{
     
     display: flex;   
     height: 41px;     
-    margin-right: 140px;
+    margin-right: -200px;
     margin-top: 40px;
 }
 .info a{  
@@ -121,7 +121,9 @@ button:hover{
     cursor: pointer;
 }
 
-
+.material-symbols-outlined{
+  display: none;
+}
 
 
 
@@ -167,4 +169,49 @@ button:hover{
       transform: rotate(360deg);
     }
   }
-  
+  @media screen and (max-width: 576px){
+    body{
+      background-image: none;
+    }
+    .info{
+      display: none;
+      
+    }
+    .flex{
+      margin-left: -45px;
+    }
+    #forget{
+      margin-left: 50px;
+    }
+    input{
+      width: 300px;
+      margin-left: -25px;
+     
+    }
+    button{
+      width: 300px;
+      margin-left: -70px;
+    }
+    .text{
+      margin-left: -35px;
+    }
+    .text span{
+      font-size: 2.2rem;
+      
+    }
+    .logo{
+      margin-left: -20px;
+    }
+    .logo img{
+      size: 5px 5px;
+    }
+    .logo span{
+      font-size:1.7rem;
+    }
+    .material-symbols-outlined{
+      display: block;
+      margin-top: 40px;
+
+      margin-right: 15px;
+    }
+  }
