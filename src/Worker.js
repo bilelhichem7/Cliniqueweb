@@ -550,10 +550,14 @@ const password = document.querySelector("#password").value;
 const job = document.querySelector("#job").value;
 const status = document.querySelector("#status").value;
 const spec = document.querySelector("#spec").value;
+var  incorrectPrefix = phonenum.substring(0,2);
 
 if (name === "" || adr === "" || date === "" || city === "" || sex === "" || phone === "" || email === "" || password === "" || job === "" || status === "" || spec === "") {
 alert("Please do not leave any field empty");
-} else {
+} else if (!incorrectPrefix == "05" || !incorrectPrefix == "07" || !incorrectPrefix == "06"){
+  alert("The telephone number starts with the incorrect digit '" +" "+ incorrectPrefix + " ");  
+}  
+else {
   var dialog = document.createElement("div");
     dialog.innerHTML = '<div class="lds-ring"><div></div><div></div><div></div><div></div></div><div>Veuillez patienter...</div>';
     dialog.style.background = "rgba(0,0,0,0.5)";
