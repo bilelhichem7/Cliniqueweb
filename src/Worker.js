@@ -700,7 +700,7 @@ onValue(st, (snapshot) => {
  var barChartOptions = {
   series: [{
     data: [cmpdoc, cmpnurse, cmpphar, cmprecep],
-    name: "Products",
+    name: "Worker",
   }],
   chart: {
     type: "bar",
@@ -713,8 +713,8 @@ onValue(st, (snapshot) => {
   colors: [
     "#227ECC",
     "#0F9B96",
-    "#376293",
-    "#0a1018",
+    "#666666",
+    "#d6d8e2",
     
   ],
   plotOptions: {
