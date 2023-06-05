@@ -145,6 +145,7 @@ function showdoc(){
     doclist.style.display = 'flex';
     doclist.style.justifyContent = 'center';
     doclist.style.alignItems = 'center';
+    
 
   const starCountRef = databaseURL(database,"user/");
   onValue(starCountRef, (snapshot) => {
@@ -652,7 +653,7 @@ function showdash (){
 let dashb = document.getElementById('dashb');
 
 function showdassh (){
-  console.log("true");
+  console.log("bilel bjdn");
   searchBar.style.display='none';
   dashb.style.display= 'block';
   doclist.style.display='none';
@@ -666,9 +667,39 @@ function showdassh (){
 // ---------- CHARTS ----------
 
 // BAR CHART
-var barChartOptions = {
+
+let cmpdoc = 0 ; 
+let cmpnurse = 0 ; 
+let cmpphar = 0 ; 
+let cmprecep = 0 ; 
+
+const st = databaseURL(database,"user/");
+onValue(st, (snapshot) => {
+  const data = snapshot.val();
+ for(let i in data){
+     if(data[i].UserJob == "doctor"){
+      cmpdoc+=1 ; 
+     } else  if(data[i].UserJob == "pharmacies"){
+      cmpphar+=1 ; 
+     } else  if(data[i].UserJob == "Receptioniste"){
+      cmprecep+=1 ; 
+     } else  if(data[i].UserJob == "nurses"){
+      cmpnurse+=1 ; 
+     } 
+ }
+ const StatDo = document.getElementById("StatDoc");
+ const StatNu = document.getElementById("StatNu");
+ const StatRe = document.getElementById("StatRe");
+ const StatPh = document.getElementById("StatPh");
+
+ StatDo.innerHTML = cmpdoc ; 
+ StatNu.innerHTML = cmpnurse ; 
+ StatRe.innerHTML = cmprecep ; 
+ StatPh.innerHTML = cmpphar ; 
+
+ var barChartOptions = {
   series: [{
-    data: [15, 20, 5, 3],
+    data: [cmpdoc, cmpnurse, cmpphar, cmprecep],
     name: "Products",
   }],
   chart: {
@@ -680,8 +711,8 @@ var barChartOptions = {
     },
   },
   colors: [
-    "#c5dcf6",
-    "#77a5d8",
+    "#227ECC",
+    "#0F9B96",
     "#376293",
     "#0a1018",
     
@@ -779,3 +810,4 @@ barChart.render();
 
 
 
+});

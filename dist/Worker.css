@@ -7,6 +7,20 @@
     font-family:'Rubik',sans-serif;
 }
 
+<<<<<<< HEAD
+
+.drower{
+ 
+}
+#material-symbols-outlined1{
+  display: none;
+}
+.material-symbols-outlined{
+ margin: 20px;
+
+}
+=======
+>>>>>>> 829a1fbc36a92efbb58af4c17c174a341ddbb378
 .material-symbols-outlined {
   font-variation-settings:
   'FILL' 0,
@@ -369,7 +383,11 @@ margin: 33px 291px;
       transform: rotate(360deg);
     }
   }
+<<<<<<< HEAD
+  
+=======
   @media screen and (max-width: 576px){}
+>>>>>>> 829a1fbc36a92efbb58af4c17c174a341ddbb378
   .main-title {
     display: flex;
     justify-content: space-between;
@@ -435,6 +453,10 @@ margin: 33px 291px;
     -webkit-column-break-inside: avoid;
     border-radius: 5px;
     box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+<<<<<<< HEAD
+    
+=======
+>>>>>>> 829a1fbc36a92efbb58af4c17c174a341ddbb378
   }
   
   .chart-title {
@@ -444,6 +466,83 @@ margin: 33px 291px;
   }
   
   .dashb{
+<<<<<<< HEAD
+    margin: 10px;
+    display: none;
+  }
+  @media screen and (max-width: 576px){
+    .doctors{
+      margin-left: -200px;
+      margin-top: 50px;
+    }
+    .searchBar{
+      margin-left: 200px;
+    }
+    .searchBar input{
+    width: 240px;
+    }
+    .searchBar button{
+      width: 90px;
+    }
+    .drower{
+     display: none;
+    }
+    #material-symbols-outlined1{
+      display: block;
+    }
+    .dashb{
+     margin-left: 200px;
+    }
+    .charts-card{
+      margin-left: -230px;
+      width: 380px;
+    }
+    .main-cards{
+      display: flex;
+      flex-direction: column;
+      
+      gap: 20px;
+      margin: 20px 0;
+    }
+    .card{
+      width: 200px;
+      margin-left: 40px;
+    }
+    .add .addPhoto {
+      width: 350px;
+      margin-left: 92px;
+    }
+    .inside{
+      width: 300px;
+      margin: 20px;
+    }
+    .inside input{
+      margin-left: 10px;
+    }
+    .flex1 , .flex2 ,.flex3,.flex4,.flex5,.sf2,.sf1{
+      flex-direction: column;
+    }
+    .inf{
+      margin-left: 115px;
+    }
+    .inf input{
+      width: 300px;
+    }
+    .Sex{
+      margin-top:00px;
+    }
+    #save{
+      width: 300px;
+      margin-left: 130px;
+    }
+    .inf select{
+      width: 320px;
+      margin-right: 0px;
+    }
+      }
+      
+=======
     margin: 50px;
     display:none;
   }
+>>>>>>> 829a1fbc36a92efbb58af4c17c174a341ddbb378

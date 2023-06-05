@@ -5,12 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patients</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="patients.css">
 </head>
 <body>
 <div class="container">
     <!--the derower-->
-    <div class="drower">
+    <span class="material-symbols-outlined" id="material-symbols-outlined1" onclick="activedd()">
+        menu
+        </span>
+    <div class="drower" id="drower">
         <!--the logo----->
         <div class="logo">
            <a href="#"> <img src="/images/Rectangle 51.png"><span  id="cliniquename">Clinic Name</span></a>
@@ -25,7 +29,7 @@
                  <img src="/images/pat.png" > 
                  Our patients
              </button>
-             
+            
          </div>
          <div class="logOut">
              <a ><img src="/images/SignOut1.png" > <span id="signout"  >Log out</span></a>
@@ -153,7 +157,8 @@
        </div> 
      </div>
 
-   
+     <script src="add1.js"></script>
+
     
    <script src="./patients.bundle.js"></script> 
 </body>

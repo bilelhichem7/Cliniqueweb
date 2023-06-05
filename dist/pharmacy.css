@@ -46,7 +46,7 @@ body{
     
     display: flex;   
     height: 41px;     
-    margin-right: 140px;
+    margin-right: -350px;
     margin-top: 40px;
 }
 .info a{  

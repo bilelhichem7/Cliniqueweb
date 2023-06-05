@@ -303,9 +303,12 @@ addpatbtn.addEventListener("click", function() {
     form.style.display = 'block';
     patslist.style.display = 'none';
     // hena ndiro apres ma hmed yrigel l class dyalo
+    const option1 = document.createElement('option');
+    option1.value = data[i].patientCity;
+    option1.text = data[i].patientCity;
     const photo = document.querySelector("#photo");
     const Name = document.querySelector("#Name").value = data[i].fullName;
-    const adr = document.querySelector("#adr").value   ;
+    const adr = document.querySelector("#adr").value = data[i].patientCity  ;
     const secNumb = document.querySelector("#secNumb").value =  data[i].patientSecurityNumber;
     const phonenum = document.querySelector("#phonenum").value = data[i].patientPhoneNumber    ;
     const date = document.querySelector("#date").value = data[i].dtOfBirth;
@@ -317,9 +320,7 @@ addpatbtn.addEventListener("click", function() {
     option.text = data[i].roomNum;
     const roomNum = document.querySelector("#roomNum"); 
     roomNum.add(option);
-    const option1 = document.createElement('option');
-    option1.value = data[i].patientCity;
-    option1.text = data[i].patientCity;
+   
     const city = document.querySelector("#city") ; 
     city.add(option1);
       }) ; 

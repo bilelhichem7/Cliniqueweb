@@ -12,7 +12,10 @@
 <!--the page content-->
 <div class="container">
     <!--the derower-->
-    <div class="drower">
+    <span class="material-symbols-outlined" id="material-symbols-outlined1" onclick="actived()">
+        menu
+        </span>
+    <div class="drower" id="drower">
        <!--the logo----->
        <div class="logo">
           <a href="#"> <img src="/images/Rectangle 51.png"><span  id="cliniquename">Clinic Name</span></a>
@@ -128,6 +131,15 @@
 
             </select>
            </div>
+           <div class="status">
+            <h5>Civil status</h5>
+            <select name="status" id="status">
+                <option value="choose"></option>
+                <option value="Maried">Maried</option>
+                <option value="Célibataire">Célibataire</option>
+                <option value="Divorcé">Divorcé</option>
+            </select>
+         </div>
            <!--speciality-->
            <div class="Speciality">
             <h5>Speciality</h5>
@@ -201,30 +213,16 @@
                 </div>
 
             </div>
-            <div class="sf3">
-                <!--status-->
-              <div class="status">
-                <h5>Civil status</h5>
-                <select name="status" id="status">
-                    <option value="choose"></option>
-                    <option value="Maried">Maried</option>
-                    <option value="Célibataire">Célibataire</option>
-                    <option value="Divorcé">Divorcé</option>
-                </select>
-             </div>
-             <!--job-->
-        
-
-            </div>
+            <div class="adrss">
+                <h5>Address</h5>
+         <input type="text" placeholder="Address" id="adr">
+        </div>
 
         </div>
         <!--flex5-->
         <div class="flex5">
             <!--address-->
-            <div class="adrss">
-                <h5>Address</h5>
-         <input type="text" placeholder="Address" id="adr">
-        </div>
+           
 
         </div>
     </div>
@@ -245,7 +243,7 @@
                     stethoscope
                     </span>
               </div>
-              <h1>15</h1>
+              <h1 id="StatDoc" >15</h1>
             </div>
   
             <div class="card">
@@ -256,7 +254,7 @@
                     </span>
                
               </div>
-              <h1>20</h1>
+              <h1 id="StatNu">20</h1>
             </div>
   
             <div class="card">
@@ -267,7 +265,7 @@
                     </span>
                 
               </div>
-              <h1>5</h1>
+              <h1 id="StatPh" >5</h1>
             </div>
   
             <div class="card">
@@ -277,7 +275,7 @@
                     edit_note
                     </span>
               </div>
-              <h1>3</h1>
+              <h1 id="StatRe">3</h1>
             </div>
   
           </div>
@@ -297,7 +295,7 @@
     </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
-
+<script src="add.js"></script>
  <script src="Worker.bundle.js"></script> 
 </body>
 </html>

@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "firebase": "^9.17.2",
+    "firebase": "^9.22.1",
     "read-excel-file": "^5.6.1"
   },
   "devDependencies": {

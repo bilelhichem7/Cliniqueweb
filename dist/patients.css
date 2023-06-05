@@ -382,4 +382,80 @@ display: none;
     background-color: #0056b3;
 }
 
+#material-symbols-outlined1{
+    display: none;
+  }
+  .material-symbols-outlined{
+   margin: 20px;
+  
+  }
+  .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+  }
+  .material-symbols-outlined{
+      margin-right: 10px;
+  }
+  @media screen and (max-width: 576px){
+    .doctors{
+      margin-left: -200px;
+      margin-top: 50px;
+    }
+    .searchBar{
+      margin-left: -30px;
+    }
+    .searchBar input{
+    width: 240px;
+    }
+    .searchBar button{
+      width: 90px;
+    }
+    .drower{
+     display: none;
+    }
+    #material-symbols-outlined1{
+      display: block;
+    }
 
+    .form, .patslist{
+        margin-left: -350px;
+        margin-top: 50px;
+    }
+    .addPhoto {
+      width: 350px;
+    
+      margin-left: -20px;
+    }
+    .inside{
+      width: 300px;
+      margin: 20px;
+    }
+    .inside input{
+      margin-left: 10px;
+    }
+    .flex1 , .flex2 ,.flex3,.flex4,.flex5,.sf2,.sf1{
+      flex-direction: column;
+      
+    }
+    .page div{
+      
+    }
+    .page input{
+      width: 300px;
+    }
+   
+    .Sex{
+      margin-top:00px;
+    }
+    #save{
+      width: 300px;
+      margin-left:5px;
+    }
+    .page select{
+      width: 320px;
+      margin-right: 0px;
+    }
+      }
