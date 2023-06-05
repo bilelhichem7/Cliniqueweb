@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getStorage, ref as storageRef , getDownloadURL, uploadBytes } from "firebase/storage";
 import { getDatabase, push, ref as databaseURL, set , onValue } from "firebase/database";
-import { getAuth,createUserWithEmailAndPassword ,signOut} from "firebase/auth";  
+import { getAuth,createUserWithEmailAndPassword ,signOut,onAuthStateChanged} from "firebase/auth";  
 import { Integer } from "read-excel-file";
 
 
@@ -166,6 +166,20 @@ addpatbtn.addEventListener("click", function() {
    } if(!incorrectPrefix == "05" || !incorrectPrefix == "07" || !incorrectPrefix == "06"){
                 alert("The telephone number starts with the incorrect digit '" +" "+ incorrectPrefix + " ");  
    } else {
+  let recepid = "" ;
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const uid = user.uid;
+        
+        recepid = uid ; 
+           // ...
+      } else {
+        // User is signed out
+        // ...
+      }
+    });
+
+
     const db = databaseURL(database,"FormPatient/");
     const gender = parseInt(sex) ; 
     const now = new Date();
@@ -187,6 +201,7 @@ addpatbtn.addEventListener("click", function() {
           const newRecordKey = newRecordRef.key;
 
           const newData = {
+            RecepId : recepid ,
             userId: newRecordKey , 
             photo :  url, 
             PatientFullName : Name , 
